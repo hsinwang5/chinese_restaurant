@@ -1,0 +1,27 @@
+{
+  "name": "chinese_restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hsin",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gm": "0.0.9",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-sass": "^3.2.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.12",
+    "request": "^2.85.0"
+  }
+}
