@@ -27,14 +27,14 @@ gulp.task("sass", function(){
 
 //resizes new images
 gulp.task('resizeImages', () =>
-    gulp.src('src/foodbig')
-     .pipe(newer('public/images/food'))
+    gulp.src('src/foodbig/*')
+     .pipe(newer('resized'))
       .pipe (gm(function(gmfile){
           gmfile.setFormat('jpg').quality(94);
           return gmfile.resize(1600, 1200);
       }))
        .pipe(imagemin())
-        .pipe(gulp.dest('public/images/food'))
+        .pipe(gulp.dest('resized'))
 );
 
 //watch scss files
