@@ -1,8 +1,23 @@
 var gulp = require("gulp");
-var gm = require("gulp-gm");
-var newer = require("gulp-newer")
 var imagemin = require("gulp-imagemin");
 var sass = require("gulp-sass");
+
+// uncomment this section when migrating from cloud - requires graphicsmagick
+// ==================================================================================
+var newer = require("gulp-newer"); 
+var gm = require("gulp-gm");
+
+gulp.task('resizeImages', () =>
+    gulp.src('src/foodbig/*')
+     .pipe(newer('resized'))
+      .pipe (gm(function(gmfile){
+          gmfile.setFormat('jpg').quality(94);
+          return gmfile.resize(1600, 1200);
+      }))
+      .pipe(imagemin())
+        .pipe(gulp.dest('resized'))
+);
+// ===================================================================================
 
 
 // //copy all HTML files
@@ -24,18 +39,6 @@ gulp.task("sass", function(){
         .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest("public/stylesheets"));
 });
-
-//resizes new images
-gulp.task('resizeImages', () =>
-    gulp.src('src/foodbig/*')
-     .pipe(newer('resized'))
-      .pipe (gm(function(gmfile){
-          gmfile.setFormat('jpg').quality(94);
-          return gmfile.resize(1600, 1200);
-      }))
-       .pipe(imagemin())
-        .pipe(gulp.dest('resized'))
-);
 
 //watch scss files
 gulp.task('watch', function(){

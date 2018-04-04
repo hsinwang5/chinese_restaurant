@@ -21,4 +21,4 @@ app.use(mainRoutes);
 
 
 
-app.listen(process.env.PORT, process.env.IP, () => console.log("Chinese Restaurant server has started successfully"));
+app.listen(3000, () => console.log("Chinese Restaurant server has started successfully"));
