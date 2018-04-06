@@ -1,2 +1,42 @@
-body {
-  background-color: blue; }
+* {
+  margin: 0;
+  padding: 0; }
+
+.hero-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  z-index: 0;
+  background-image: url("../images/food/hero-image.jpg"); }
+
+nav {
+  opacity: .75;
+  z-index: 100;
+  position: fixed;
+  width: 94vw;
+  height: 75px;
+  background-color: gray;
+  margin: 10px 0 0 2.5vw; }
+  nav div {
+    display: inline-block; }
+    nav div a img {
+      width: 95px;
+      height: 75px;
+      margin-left: 20px; }
+  nav .food-drop {
+    display: inline-block;
+    height: 75px;
+    line-height: 75px;
+    width: 95px;
+    font-size: 2em;
+    position: relative;
+    bottom: 27px;
+    left: 5vw; }
+  nav .jobs {
+    left: 50%; }
+
+p {
+  margin-top: 30px; }
