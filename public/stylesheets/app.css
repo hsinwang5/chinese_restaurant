@@ -1,8 +1,5 @@
 *, *:before, *:after {
-  box-sizing: inherit;
-  margin: 0;
-  border: 0;
-  font-family: inherit; }
+  box-sizing: inherit; }
 
 html {
   box-sizing: border-box; }
@@ -13,86 +10,63 @@ html {
   position: absolute;
   top: 0;
   left: 0;
+  background: url("../images/food/hero-image.jpg") no-repeat 25% 50%;
   background-size: cover;
-  z-index: 0;
-  background-image: url("../images/food/hero-image.jpg"); }
+  z-index: 0; }
 
 nav {
-  opacity: .75;
-  z-index: 100;
   position: fixed;
+  margin: .625rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
   width: 100vw;
   height: 4.7rem;
-  background-color: #628900;
-  margin: 10px 0 0 0;
-  display: flex;
-  align-items: center;
-  font-family: 'Jua', sans-serif; }
-  nav .main-nav-section {
-    flex-grow: 20;
-    overflow: hidden;
-    white-space: nowrap;
-    display: flex; }
-  nav img {
+  z-index: 100;
+  background: rgba(98, 137, 0, 0.75);
+  font-family: 'Jua', sans-serif;
+  font-size: 1.2rem; }
+  nav a {
+    text-decoration: none;
+    color: black; }
+  nav .nav-logo, nav .nav-logo img {
     width: 95px;
     height: 100%;
-    margin-left: 4px;
-    margin-top: 8px; }
-  nav .logo-box {
+    margin-left: .1rem; }
+  nav .nav-main-section {
+    display: flex;
     flex-grow: 1; }
-  nav .nav-cart {
-    font-size: .9rem;
-    margin-left: .5rem;
-    flex-grow: 6;
-    position: relative;
-    bottom: .7rem; }
-  nav .cart-price {
-    position: absolute;
-    left: -1rem; }
-  nav .nav-default {
+  nav .nav-item {
     flex-grow: 1;
-    font-size: 1.25rem;
-    display: inline-block;
-    height: 100%; }
-  nav a {
-    position: relative;
-    text-decoration: none;
-    color: black;
-    z-index: 100; }
-  nav a:hover {
-    color: white; }
-  nav .nav-select, nav .nav-select-location {
     text-align: center;
-    opacity: .9;
-    height: 4.7rem;
     line-height: 4.7rem;
-    margin: auto; }
-  @media only screen and (min-width: 40.063em) {
+    height: 100%; }
+    nav .nav-item a {
+      height: 0;
+      display: block;
+      transition: height .15s ease; }
+    nav .nav-item .highlight-hover {
+      color: #969696; }
+  nav .nav-cart {
+    position: relative;
+    top: .5rem;
+    width: 5rem;
+    text-align: center; }
+  @media only screen and (min-width: 40.1rem) {
     nav {
-      width: 90vw;
-      margin: 10px 0 0 4.5vw; }
-      nav .main-nav-section {
-        margin-left: 10px;
-        width: 30vw; }
+      width: 94vw;
+      margin: .625rem 0 0 3vw;
+      font-size: 2.2rem; }
+      nav .nav-item .highlight-hover {
+        height: 100%;
+        background: linear-gradient(to right, rgba(98, 137, 0, 0.2), rgba(140, 0, 13, 0.75), rgba(98, 137, 0, 0.2)); }
       nav .nav-cart {
-        font-size: 1.5rem;
-        display: inline;
-        bottom: 1.1rem; }
-      nav .nav-default {
-        font-size: 2.2rem; }
-      nav img {
-        margin-left: 25px; }
-      nav .nav-select {
-        width: 100px; }
-      nav .nav-select-location {
-        width: 150px; }
-      nav .highlight {
-        width: inherit;
-        height: 4.75rem;
-        opacity: 0;
-        position: relative;
-        bottom: 4.7rem;
-        transition: opacity .4s ease; }
-      nav .highlight-hover {
-        opacity: .5;
-        background-color: red; } }
+        font-size: 1.8rem;
+        top: -.1rem;
+        width: 7.5rem; } }
+  @media only screen and (min-width: 60.1rem) {
+    nav .nav-cart {
+      width: 10.8rem;
+      top: 1rem; }
+    nav .nav-cart div {
+      display: inline-block;
+      margin-left: .5rem; } }
