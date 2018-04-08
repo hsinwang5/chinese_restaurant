@@ -29,31 +29,46 @@ nav {
   opacity: .75;
   z-index: 100;
   position: fixed;
-  width: 94vw;
+  width: 100vw;
   height: 4.7rem;
-  background-color: #628900 ;
-  margin: 10px 0 0 2.5vw;
+  background-color: #628900;
+  margin: 10px 0 0 0;
   display: flex;
   align-items: center;
   font-family: 'Jua', sans-serif;
   .main-nav-section {
-    flex-grow: 16;
+    flex-grow: 20;
+    overflow: hidden;
+    // border: 1px solid red;
+    white-space: nowrap;
     display: flex;
   }
   img {
     width: 95px;
     height: 100%;
-    margin-left: 20px;
+    margin-left: 4px;
     margin-top: 8px;
   }
   .logo-box {
     flex-grow: 1;
     // border: 1px solid green;
   }
+  .nav-cart {
+    font-size: .9rem;
+    margin-left: .5rem;
+    flex-grow: 6;
+    position: relative;
+    bottom: .7rem;
+    // right: 4rem;
+  }
+  .cart-price {
+    position: absolute;
+    left: -1rem;
+  }
   .nav-default {
     flex-grow: 1;
-    font-size: 1.4rem;
-    // border: 1px solid green;
+    font-size: 1.25rem;
+    display: inline-block;
     height: 100%;
   }
   a{
@@ -65,11 +80,6 @@ nav {
   a:hover {
     color: white;
   }
-  @media all and (min-width: 600px) {
-    .nav-default {
-      font-size: 2.2rem;
-    }
-  }
   .nav-select, .nav-select-location {
     text-align: center;
     opacity: .9;
@@ -77,9 +87,25 @@ nav {
     line-height: 4.7rem;
     margin: auto;
   }
-  @media all and (min-width: 600px) {
+  @media only screen and (min-width: 40.063em) {
+  width: 90vw;
+  margin: 10px 0 0 4.5vw;
+    .main-nav-section {
+      margin-left: 10px;
+      width: 30vw;
+    }
+    .nav-cart {
+      font-size: 1.5rem;
+      display: inline;
+      bottom: 1.1rem;
+    }
+    .nav-default {
+      font-size: 2.2rem;
+    }
+    img {
+      margin-left: 25px;
+    }
     .nav-select {
-      // border: 1px solid red;
       width: 100px;
     }
     .nav-select-location {

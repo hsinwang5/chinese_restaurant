@@ -21,26 +21,38 @@ nav {
   opacity: .75;
   z-index: 100;
   position: fixed;
-  width: 94vw;
+  width: 100vw;
   height: 4.7rem;
   background-color: #628900;
-  margin: 10px 0 0 2.5vw;
+  margin: 10px 0 0 0;
   display: flex;
   align-items: center;
   font-family: 'Jua', sans-serif; }
   nav .main-nav-section {
-    flex-grow: 16;
+    flex-grow: 20;
+    overflow: hidden;
+    white-space: nowrap;
     display: flex; }
   nav img {
     width: 95px;
     height: 100%;
-    margin-left: 20px;
+    margin-left: 4px;
     margin-top: 8px; }
   nav .logo-box {
     flex-grow: 1; }
+  nav .nav-cart {
+    font-size: .9rem;
+    margin-left: .5rem;
+    flex-grow: 6;
+    position: relative;
+    bottom: .7rem; }
+  nav .cart-price {
+    position: absolute;
+    left: -1rem; }
   nav .nav-default {
     flex-grow: 1;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+    display: inline-block;
     height: 100%; }
   nav a {
     position: relative;
@@ -49,27 +61,38 @@ nav {
     z-index: 100; }
   nav a:hover {
     color: white; }
-  @media all and (min-width: 600px) {
-    nav .nav-default {
-      font-size: 2.2rem; } }
   nav .nav-select, nav .nav-select-location {
     text-align: center;
     opacity: .9;
     height: 4.7rem;
     line-height: 4.7rem;
     margin: auto; }
-  @media all and (min-width: 600px) {
-    nav .nav-select {
-      width: 100px; }
-    nav .nav-select-location {
-      width: 150px; }
-    nav .highlight {
-      width: inherit;
-      height: 4.75rem;
-      opacity: 0;
-      position: relative;
-      bottom: 4.7rem;
-      transition: opacity .4s ease; }
-    nav .highlight-hover {
-      opacity: .5;
-      background-color: red; } }
+  @media only screen and (min-width: 40.063em) {
+    nav {
+      width: 90vw;
+      margin: 10px 0 0 4.5vw; }
+      nav .main-nav-section {
+        margin-left: 10px;
+        width: 30vw; }
+      nav .nav-cart {
+        font-size: 1.5rem;
+        display: inline;
+        bottom: 1.1rem; }
+      nav .nav-default {
+        font-size: 2.2rem; }
+      nav img {
+        margin-left: 25px; }
+      nav .nav-select {
+        width: 100px; }
+      nav .nav-select-location {
+        width: 150px; }
+      nav .highlight {
+        width: inherit;
+        height: 4.75rem;
+        opacity: 0;
+        position: relative;
+        bottom: 4.7rem;
+        transition: opacity .4s ease; }
+      nav .highlight-hover {
+        opacity: .5;
+        background-color: red; } }

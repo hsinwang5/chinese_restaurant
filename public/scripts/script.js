@@ -1,4 +1,4 @@
-const navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll(".nav-default a");
 
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener("mouseover", function(e) {
