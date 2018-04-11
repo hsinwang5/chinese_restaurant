@@ -8,11 +8,12 @@ var newer = require("gulp-newer");
 var gm = require("gulp-gm");
 
 gulp.task('resizeImages', () =>
-    gulp.src('src/foodbig/*')
+    gulp.src('src/images/*')
      .pipe(newer('resized'))
       .pipe (gm(function(gmfile){
-          gmfile.setFormat('jpg').quality(94);
+          gmfile.setFormat('jpg').quality(90);
           return gmfile.resize(1600, 1200);
+        // return gmfile.resize(1200, 800);
       }))
       .pipe(imagemin())
         .pipe(gulp.dest('resized'))
