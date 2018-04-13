@@ -7,7 +7,7 @@ html {
   box-sizing: border-box; }
 
 body {
-  background: black;
+  background: #FAFAF2;
   overflow-x: hidden; }
 
 @media only screen and (min-width: 50.1rem) {
@@ -15,9 +15,13 @@ body {
     position: fixed;
     width: 100%;
     height: 100vh;
-    border: .8rem solid black;
-    border-width: .85rem 0 .85rem 0;
-    z-index: 1; } }
+    border: 0.8rem solid #FAFAF2;
+    z-index: 101;
+    pointer-events: none; } }
+
+@media only screen and (min-width: 79rem) {
+  .page-border {
+    border-width: 1.2rem; } }
 
 nav {
   position: fixed;
@@ -27,11 +31,10 @@ nav {
   justify-content: space-between;
   width: 100%;
   height: 4.2rem;
-  z-index: 100;
+  z-index: 102;
   background: #f0f0f0;
   font-family: 'Jua', sans-serif;
-  font-size: 1.2rem;
-  overflow: hidden; }
+  font-size: 1.1rem; }
   nav a {
     text-decoration: none;
     color: black; }
@@ -64,68 +67,147 @@ nav {
   @media only screen and (min-width: 50.1rem) {
     nav {
       height: 4.7rem;
-      width: 97%;
-      margin: .8rem auto;
+      margin: 0.7rem auto;
+      border: 0.9rem solid #FAFAF2;
+      border-width: 0 0.8rem;
       font-size: 2.2rem; }
+      nav .nav-main-section {
+        flex: 0 1 650px; }
+      nav .nav-logo, nav .nav-logo img {
+        position: relative;
+        bottom: .4rem;
+        width: 9.7rem;
+        height: 7.17rem;
+        margin-left: .3rem; }
       nav .nav-cart {
         font-size: 1.8rem;
         top: 0rem;
         width: 7.5rem; }
-      nav .nav-logo, nav .nav-logo img {
-        width: 100px; }
       nav .nav-item {
         line-height: 4.7rem; } }
   @media only screen and (min-width: 79rem) {
-    nav .nav-cart {
-      width: 10.8rem;
-      top: 1rem; }
-    nav .nav-cart div {
-      display: inline-block;
-      margin-left: .5rem; } }
+    nav {
+      height: 5.2rem;
+      margin: 1.2rem auto;
+      border: 0.9rem solid #FAFAF2;
+      border-width: 0 1.2rem;
+      font-size: 2.75rem; }
+      nav .nav-main-section {
+        flex: 0 1 65%; }
+      nav .nav-logo, nav .nav-logo img {
+        position: relative;
+        bottom: .5rem;
+        margin: 0 0 1rem 1rem;
+        width: 11.5rem;
+        height: 8.5rem; }
+      nav .nav-cart {
+        font-size: 2.1rem;
+        width: 10.8rem;
+        top: 1rem;
+        margin-right: 1rem; }
+      nav .nav-cart div {
+        display: inline-block;
+        margin-left: .5rem; }
+      nav .nav-item {
+        line-height: 5.2rem; } }
 
 .splash-image {
   position: relative;
-  top: 4.2rem;
-  height: 87vh;
+  max-height: 570px;
+  padding-top: 4.2rem;
   overflow: hidden; }
   .splash-image img {
     position: relative;
-    width: 220vw;
-    left: -67vw; }
+    width: 200vw;
+    left: -56vw; }
   .splash-image .text1 {
     position: absolute;
-    top: 2rem;
+    top: 6.2rem;
     left: 3vw;
     font-family: 'Hi Melody', cursive;
-    font-size: 3.5rem;
-    color: black; }
+    font-size: 3.8rem;
+    color: #B3073B; }
   .splash-image .text2 {
     position: absolute;
-    top: 4.75rem;
+    top: 9.7rem;
     left: 3vw;
     width: 80%;
     font-family: 'East Sea Dokdo', cursive;
     font-size: 2.5rem;
-    color: #237100; }
+    color: #04C714; }
   @media only screen and (min-width: 50.1rem) {
     .splash-image {
-      max-width: 97%;
+      max-width: 100%;
       margin: auto;
-      top: 4.7rem;
       box-sizing: content-box; }
       .splash-image img {
         width: 100%;
         left: 0; }
-      .splash-image .text1, .splash-image .text2 {
-        font-size: 4rem;
-        left: 7vw; }
+      .splash-image .text1 {
+        font-size: 5rem;
+        left: 7vw;
+        top: 7.1rem; }
       .splash-image .text2 {
-        font-size: 2.85rem;
-        top: 5rem; } }
+        font-size: 3rem;
+        top: 11.75rem;
+        left: 7vw; } }
   @media only screen and (min-width: 79rem) {
-    .splash-image .text1, .splash-image .text2 {
-      font-size: 6rem;
-      left: 10vw; }
-    .splash-image .text2 {
-      font-size: 4.25rem;
-      top: 6rem; } }
+    .splash-image {
+      max-height: 100vh; }
+      .splash-image .text1 {
+        font-size: 6.5rem;
+        left: 10vw;
+        top: 7.95rem; }
+      .splash-image .text2 {
+        font-size: 4.5rem;
+        top: 13.2rem;
+        left: 10vw; } }
+
+.showcase-scroll-wrapper {
+  display: flex;
+  overflow-x: scroll;
+  margin: 0.8rem;
+  margin-top: 0.7rem; }
+
+.showcase-wrapper {
+  position: relative;
+  flex: 0 0 70vmin;
+  height: 60vmin;
+  margin-right: 0.8rem;
+  overflow: hidden; }
+  .showcase-wrapper .showcase-box1 {
+    width: 100vmin;
+    height: 85vmin;
+    background: black; }
+  .showcase-wrapper .showcase-box1 img {
+    width: 120%;
+    opacity: .5;
+    transition: transform .75s ease, opacity 1s ease; }
+  .showcase-wrapper .showcase-box2 {
+    border: 1px solid white;
+    overflow: hidden;
+    position: absolute;
+    width: 120vmin;
+    height: 80vmin;
+    top: 33.5%;
+    left: 2%;
+    background: black;
+    transform: rotate(-40.6deg);
+    transition: transform .75s ease; }
+  .showcase-wrapper .showcase-box2 img {
+    position: absolute;
+    top: -30%;
+    width: 110%;
+    opacity: .5;
+    transform: rotate(40.6deg);
+    transition: transform .75s ease, opacity 1s ease; }
+  .showcase-wrapper .showcase-box1 .showcase-box1-image-transform {
+    transform: translate(-20.5%, -13%) scale(0.75);
+    opacity: 1; }
+  .showcase-wrapper .showcase-box2-transform-down {
+    transform: translate(23%, 23%) rotate(-40.6deg); }
+  .showcase-wrapper .showcase-box2 .showcase-box2-image-transform {
+    transform: translate(2.5%, 14%) scale(0.75) rotate(40.6deg);
+    opacity: 1; }
+  .showcase-wrapper .showcase-box2-transform-up {
+    transform: translate(-23%, -23%) rotate(-40.6deg); }

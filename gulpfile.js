@@ -11,9 +11,9 @@ gulp.task('resizeImages', () =>
     gulp.src('src/images/*')
      .pipe(newer('resized'))
       .pipe (gm(function(gmfile){
-          gmfile.setFormat('jpg').quality(90);
-          return gmfile.resize(1600, 1200);
-        // return gmfile.resize(1200, 800);
+          gmfile.setFormat('jpg').quality(80);
+        //   return gmfile.resize(1600, 1200);
+        return gmfile.resize(1200, 900);
       }))
       .pipe(imagemin())
         .pipe(gulp.dest('resized'))

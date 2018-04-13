@@ -4,8 +4,12 @@
 
 $tablet: 50.1rem; //800pixel android tablets
 $desktop: 79rem;  //720p and larger screens
-$standard-width: 97%;
-$mobile-width: 100%;
+$border-color: #FAFAF2;
+$mobile-padding: 4.2rem;
+$desktop-padding: 5.6rem;
+$jumbo-padding: 6.45rem;
+$small-border: .8rem;
+$large-border: 1.2rem;
 
 @mixin mobile-cutoff {
   @media only screen and (min-width: $tablet) {
@@ -32,7 +36,7 @@ html {
 }
 
 body {
-  background: black;
+  background: $border-color;
   overflow-x: hidden;
 }
 
@@ -41,26 +45,29 @@ body {
   position: fixed;
   width: 100%;
   height: 100vh;
-  border: .8rem solid black;
-  border-width: .85rem 0 .85rem 0;
-  z-index: 1;
+  border: $small-border solid $border-color;
+  z-index: 101;
+  pointer-events: none;
+  }
+  @include desktop-cutoff() {
+    border-width: $large-border;
   }
 }
 
-//Nav Bar=================================================================
+//Nav Bar================================================================================
 nav {
   position: fixed;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
-  width: $mobile-width;
+  width: 100%;
   height: 4.2rem;
-  z-index: 100;
+  z-index: 102;
   background: rgba(240, 240, 240, 1);
   font-family: 'Jua', sans-serif;
-  font-size: 1.2rem;
-  overflow: hidden;
+  font-size: 1.1rem;
+  // overflow: hidden;
   a{
     text-decoration: none;
     color: black;
@@ -99,90 +106,187 @@ nav {
   }
   @include mobile-cutoff() {
     height: 4.7rem;
-    width: $standard-width;
-    margin: .8rem auto;
+    margin: $small-border - .1rem auto;
+    border: .9rem solid $border-color;
+    border-width: 0 $small-border;
     font-size: 2.2rem;
-    .nav-cart {
-      font-size: 1.8rem;
-      // top: -.1rem;
-      top: 0rem;
-      width: 7.5rem;
+    .nav-main-section {
+      flex: 0 1 650px;
     }
     .nav-logo, .nav-logo img {
-      width: 100px;
+      position: relative;
+      bottom: .4rem;
+      width: 9.7rem;
+      height: 7.17rem;
+      margin-left: .3rem;
+    }
+    .nav-cart {
+      font-size: 1.8rem;
+      top: 0rem;
+      width: 7.5rem;
     }
     .nav-item {
       line-height: 4.7rem;
     }
   }
   @include desktop-cutoff() {
+    height: 5.2rem;
+    margin: $large-border auto;
+    border: .9rem solid $border-color;
+    border-width: 0 $large-border;
+    font-size: 2.75rem;
+    .nav-main-section {
+      flex: 0 1 65%;
+    }
+    .nav-logo, .nav-logo img {
+      position: relative;
+      bottom: .5rem;
+      margin: 0 0 1rem 1rem;
+      width: 11.5rem;
+      height: 8.5rem;
+    }
     .nav-cart {
+      font-size: 2.1rem;
       width: 10.8rem;
       top: 1rem;
+      margin-right: 1rem;
     }
     .nav-cart div {
       display: inline-block;
       margin-left: .5rem;
     }
+    .nav-item {
+      line-height: 5.2rem;
+    }
   }
 }
 
-//splash image=================================================================
+//splash image==========================================================================
 .splash-image {
   position: relative;
-  top: 4.2rem;
-  height: 87vh;
+  max-height: 570px;
+  padding-top: $mobile-padding;
   overflow: hidden;
   img {
     position: relative;
-    width: 220vw;
-    // height: 87vh;
-    left: -67vw;
+    width: 200vw;
+    left: -56vw;
   }
   .text1 {
     position: absolute;
-    top: 2rem;
+    top: 6.2rem;
     left: 3vw;
     font-family: 'Hi Melody', cursive;
-    font-size: 3.5rem;
-    color: black;
+    font-size: 3.8rem;
+    color: #B3073B;
   }
   .text2 {
     position: absolute;
-    top: 4.75rem;
+    top: 9.7rem;
     left: 3vw;
     width: 80%;
     font-family: 'East Sea Dokdo', cursive;
     font-size: 2.5rem;
-    color: #237100;
+    color: #04C714;
   }
   @include mobile-cutoff() {
-    max-width: $standard-width;
+    max-width: 100%;
     margin: auto;
-    top: 4.7rem;
     box-sizing: content-box;
     img {
       width: 100%;
       left: 0;
     }
-    .text1, .text2 {
-      font-size: 4rem;
+    .text1 {
+      font-size: 5rem;
       left: 7vw;
+      top: $desktop-padding + 1.5rem;;
     }
     .text2 {
-      font-size: 2.85rem;
-      top: 5rem;
+      font-size: 3rem;
+      top: $desktop-padding + 6.15rem;
+      left: 7vw;
     }
   }
   @include desktop-cutoff() {
-    .text1, .text2 {
-      font-size: 6rem;
+    max-height: 100vh;
+    // max-width: 100%;
+    .text1 {
+      font-size: 6.5rem;
       left: 10vw;
+      top: $jumbo-padding + 1.5rem;
     }
     .text2 {
-      font-size: 4.25rem;
-      top: 6rem;
+      font-size: 4.5rem;
+      top: $jumbo-padding + 6.75rem;
+      left: 10vw;
     }
+  }
+}
+
+//showcase section=======================================================================
+$showcase-zoom-out: 100%;
+$showcase-zoom-in: 130%;
+
+.showcase-scroll-wrapper {
+  display: flex;
+  // overflow-y: hidden;
+  overflow-x: scroll;
+  margin: $small-border;
+  margin-top: $small-border - .1rem;
+}
+
+.showcase-wrapper {
+  position: relative;
+  flex: 0 0 70vmin;
+  height: 60vmin;
+  margin-right: $small-border;
+  overflow: hidden;
+  .showcase-box1 {
+    width: 100vmin;
+    height: 85vmin;
+    background: black;
+  }
+  .showcase-box1 img{
+    width: 120%;
+    opacity: .5;
+    transition: transform .75s ease, opacity 1s ease;
+  }
+  .showcase-box2 {
+    border: 1px solid white;
+    overflow: hidden;
+    position: absolute;
+    width: 120vmin;
+    height: 80vmin;
+    top: 33.5%;
+    left: 2%;
+    background: black;
+    transform: rotate(-40.6deg);
+    transition: transform .75s ease;
+  }
+  .showcase-box2 img {
+    position: absolute;
+    top: -30%;
+    width: 110%;
+    opacity: .5;
+    transform: rotate(40.6deg);
+    transition: transform .75s ease, opacity 1s ease;
+  }
+  //hover section
+  .showcase-box1 .showcase-box1-image-transform {
+    transform: translate(-20.5%, -13%) scale(.75);
+    opacity: 1;
+  }
+  .showcase-box2-transform-down {
+    transform: translate(23%, 23%) rotate(-40.6deg);
+  }
+
+  .showcase-box2 .showcase-box2-image-transform {
+    transform: translate(2.5%, 14%) scale(.75) rotate(40.6deg);
+    opacity: 1;
+  }
+  .showcase-box2-transform-up {
+    transform: translate(-23%, -23%) rotate(-40.6deg);
   }
 }
 
