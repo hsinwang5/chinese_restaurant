@@ -40,28 +40,28 @@ nav {
   font-size: 1.1rem; }
   nav a {
     color: black; }
-  nav .nav-logo, nav .nav-logo img {
+  nav .nav__logo, nav .nav__logo img {
     width: 90px;
     height: 100%;
     margin-left: .1rem; }
-  nav .nav-main-section {
+  nav .nav__main-section {
     display: flex;
     flex-grow: 1; }
-  nav .nav-item {
+  nav .nav__item {
     flex-grow: 1;
     text-align: center;
     line-height: 4.2rem;
     height: 100%; }
-    nav .nav-item a {
+    nav .nav__item a {
       height: 0;
       display: block;
       transition: height .15s ease; }
-    nav .nav-item .highlight-hover {
+    nav .nav__item .js-highlight-hover {
       border-top: 2px solid rgba(0, 0, 0, 0.7);
       color: #323232;
       height: 100%;
       background: linear-gradient(to right, rgba(252, 248, 235, 0.1), rgba(140, 0, 13, 0.45), rgba(252, 248, 235, 0.1)); }
-  nav .nav-cart {
+  nav .nav__cart {
     position: relative;
     top: .5rem;
     width: 5rem;
@@ -73,19 +73,19 @@ nav {
       border: 0.9rem solid #FAFAF2;
       border-width: 0 0.8rem;
       font-size: 2.2rem; }
-      nav .nav-main-section {
+      nav .nav__main-section {
         flex: 0 1 650px; }
-      nav .nav-logo, nav .nav-logo img {
+      nav .nav__logo, nav .nav__logo img {
         position: relative;
         bottom: .4rem;
         width: 9.7rem;
         height: 7.17rem;
         margin-left: .3rem; }
-      nav .nav-cart {
+      nav .nav__cart {
         font-size: 1.8rem;
         top: 0rem;
         width: 7.5rem; }
-      nav .nav-item {
+      nav .nav__item {
         line-height: 4.7rem; } }
   @media only screen and (min-width: 65rem) {
     nav {
@@ -94,23 +94,23 @@ nav {
       border: 0.9rem solid #FAFAF2;
       border-width: 0 1.2rem;
       font-size: 2.75rem; }
-      nav .nav-main-section {
+      nav .nav__main-section {
         flex: 0 1 65%; }
-      nav .nav-logo, nav .nav-logo img {
+      nav .nav__logo, nav .nav__logo img {
         position: relative;
         bottom: .5rem;
         margin: 0 0 1rem 1rem;
         width: 11.5rem;
         height: 8.5rem; }
-      nav .nav-cart {
+      nav .nav__cart {
         font-size: 2.1rem;
         width: 10.8rem;
         top: 1rem;
         margin-right: 1rem; }
-      nav .nav-cart div {
+      nav .nav__cart div {
         display: inline-block;
         margin-left: .5rem; }
-      nav .nav-item {
+      nav .nav__item {
         line-height: 5.2rem; } }
 
 .splash-image {
@@ -172,76 +172,102 @@ nav {
 .info-panel {
   position: relative;
   width: 100%;
-  height: 30rem;
+  height: 34rem;
   overflow: hidden;
   margin-top: 0.8rem; }
-  .info-panel .info-panel__image {
-    background: url("../images/drinks/showcase-drink2.jpg") no-repeat 0 100%;
-    background-size: 100% auto;
-    height: 100%; }
-  .info-panel .info-panel__text-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 1.5rem auto;
-    font-size: 2.5rem;
-    text-align: center;
-    font-family: "Jua", sans-serif;
-    width: 80%;
-    height: 17rem; }
-  .info-panel .info-panel__text1 {
-    color: #1890f2; }
-  .info-panel .info-panel__text2 {
-    position: relative;
-    color: #1890f2;
-    font-size: 3rem;
-    font-weight: bold;
-    top: -1rem; }
-  .info-panel a {
-    display: inline-block;
-    height: 4rem;
-    width: 17rem; }
-  .info-panel .info-panel__text3 {
-    position: relative;
-    margin: auto;
-    top: -.5rem;
-    height: 4rem;
-    width: 17rem;
-    color: purple;
-    line-height: 4rem;
-    background: #1890f2;
-    border-radius: 12px;
-    box-shadow: 0 2px #888888; }
-    .info-panel .info-panel__text3:hover {
-      background: #4ca5ee; }
-  .info-panel .pressed {
-    height: 3.93rem;
-    transform: translate(0, 0.07rem);
-    background: #1890f2 !important; }
-  @media only screen and (min-width: 41rem) {
-    .info-panel {
-      height: 25rem; } }
 
-.info-panel2 {
+.info-panel__image {
+  background: url("../images/drinks/showcase-drink2.jpg") no-repeat 0 100%;
+  background-size: 105% auto;
+  height: 100%; }
+
+.info-panel__text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 1.5rem auto;
+  font-size: 2.5rem;
+  text-align: center;
+  font-family: 'Jua', sans-serif;
+  width: 80%;
+  height: 17rem; }
+
+.info-panel__text--blue {
+  color: #1890f2; }
+
+.info-panel__text--big-blue {
   position: relative;
-  width: 100%;
-  height: 16rem;
-  overflow: hidden;
-  margin-top: 0.8rem; }
-  .info-panel2 .local-image {
-    background: url("../images/local/showcase-local.jpg") no-repeat 50% 50%;
-    background-size: 135% auto;
-    height: 100%; }
-  .info-panel2 .local-text-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 1.5rem auto;
-    font-size: 2.5rem;
-    text-align: center;
-    font-family: "Jua", sans-serif; }
+  color: #1890f2;
+  font-size: 3rem;
+  font-weight: bold;
+  top: -1rem; }
+
+.button-link {
+  display: inline-block;
+  height: 4rem;
+  width: 17rem;
+  position: relative;
+  margin: auto;
+  top: -.5rem;
+  height: 4rem;
+  width: 17rem;
+  color: purple;
+  line-height: 4rem;
+  background: #1890f2;
+  border-radius: 12px;
+  box-shadow: 0 2px #888888; }
+  .button-link:hover {
+    background: #4ca5ee;
+    background: black; }
+
+.js-pressed {
+  height: 3.93rem;
+  transform: translate(0, 0.07rem);
+  background: #1890f2 !important; }
+
+@media only screen and (min-width: 41rem) {
+  .info-panel {
+    height: 25rem; }
+  .info-panel__image {
+    background: url("../images/drinks/showcase-drink3.jpg") no-repeat 0% 60%;
+    background-size: 130% auto; }
+  .info-panel__text-container {
+    width: 50%;
+    top: 18%;
+    right: 45%; } }
+
+.info-panel--small {
+  height: 17rem; }
+
+.info-panel__image--local {
+  background: url("../images/local/showcase-local.jpg") no-repeat 50% 50%;
+  background-size: 135% auto; }
+
+.info-panel__text--green {
+  color: #056305; }
+
+.button-link--green {
+  margin-top: 1rem;
+  background: #046904; }
+
+.info-panel__image--remodel {
+  background: url("../images/misc/showcase-remodel.jpg") no-repeat 50% 25%;
+  background-size: 100% auto; }
+
+.info-panel__text--tiny {
+  font-size: 1.8rem; }
+
+.info-panel__image--catering {
+  background: url("../images/misc/showcase-catering-mobile.jpg") no-repeat 50% 25%;
+  background-size: 100% auto; }
+
+.info-panel__text-container--low {
+  margin-top: 5rem; }
+
+.button-link--black {
+  margin-top: 1rem;
+  background: #f0f0f0; }
 
 .showcase-scroll-wrapper {
   display: flex;
@@ -260,8 +286,8 @@ nav {
 
 .showcase-wrapper {
   position: relative;
-  flex: 0 0 70vw;
-  height: 59.99vw;
+  flex: 0 0 65vw;
+  height: 55.705vw;
   overflow: hidden;
   margin-right: 0.8rem;
   border: 1px solid black; }
@@ -271,7 +297,6 @@ nav {
     background: black; }
   .showcase-wrapper .showcase-box1 img {
     width: 120%;
-    opacity: .5;
     transition: transform .75s ease, opacity 1.5s ease; }
   .showcase-wrapper .showcase-box2 {
     border: 1px solid black;
@@ -288,7 +313,6 @@ nav {
     position: absolute;
     top: -30%;
     width: 110%;
-    opacity: .5;
     transform: rotate(40.6deg);
     transition: transform .75s ease, opacity 1.5s ease; }
   .showcase-wrapper .showcase-box1 .showcase-box1-image-transform {

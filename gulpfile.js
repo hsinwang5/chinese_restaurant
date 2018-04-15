@@ -7,11 +7,23 @@ var sass = require("gulp-sass");
 var newer = require("gulp-newer"); 
 var gm = require("gulp-gm");
 
-gulp.task('resizeImages', () =>
+gulp.task('resizeImagesLow', () =>
     gulp.src('src/images/*')
      .pipe(newer('resized'))
       .pipe (gm(function(gmfile){
           gmfile.setFormat('jpg').quality(80);
+        //   return gmfile.resize(1600, 1200);
+        return gmfile.resize(1100, 825);
+      }))
+      .pipe(imagemin())
+        .pipe(gulp.dest('resized'))
+);
+
+gulp.task('resizeImagesHigh', () =>
+    gulp.src('src/images/*')
+     .pipe(newer('resized'))
+      .pipe (gm(function(gmfile){
+          gmfile.setFormat('jpg').quality(90);
         //   return gmfile.resize(1600, 1200);
         return gmfile.resize(1200, 900);
       }))

@@ -1,23 +1,23 @@
 <% include ../partials/header %>
 
-<div class="splash-image">
+<section class="splash-image">
     <img src="images/food/hero-2.jpg">
     <div class="splash-image__text1">Hokigai Sashimi</div>
     <div class="splash-image__text2">with spring vegetables</div>
-</div>
+</section>
 
-<div class="info-panel">
+<section class="info-panel">
     <div class="info-panel__image"></div>
     <div class="info-panel__text-container">
-        <div class="info-panel__text1"><i class="far fa-snowflake"></i> Iced <i class="far fa-snowflake"></i></div>
-        <div class="info-panel__text2">Milk Frosties</div>
-        <a href="">
-            <div class="info-panel__text3 js-text3"><i class="far fa-star"></i> Try One! <i class="fas fa-star"></i></div>
+        <div class="info-panel__text--blue"><i class="far fa-snowflake"></i> Iced <i class="far fa-snowflake"></i></div>
+        <div class="info-panel__text--big-blue">Milk Frosties</div>
+        <a class="button-link js-button-press" href="">
+            <i class="far fa-star"></i> Try One! <i class="fas fa-star"></i>
         </a>
     </div>
-</div>
+</section>
 
-<div class="showcase-scroll-wrapper">
+<section class="showcase-scroll-wrapper">
     <div class="showcase-wrapper">
         <div class="showcase-box1 js-showcase-box1">
             <img src="images/food/showcase-1.jpg">
@@ -50,15 +50,34 @@
             <img src="images/food/showcase-7.jpg">
         </div>
     </div>
-</div>
+</section>
 
-<div class="info-panel2">
-    <div class="local-image"></div>
-    <div class="local-text-container">
-        <div class="local-text1">Locally Sourced</div>
-        <a href="#"><div class="local-text2">Learn More</div></a>
+<section class="info-panel info-panel--small">
+    <div class="info-panel__image info-panel__image--local"></div>
+    <div class="info-panel__text-container">
+        <div class="info-panel__text--green">Locally Sourced</div>
+        <a class="button-link button-link--green js-button-press" href="#">Learn More</a>
     </div>
-</div>
+</section>
+
+<section class="info-panel">
+    <div class="info-panel__image info-panel__image--remodel"></div>
+    <div class="info-panel__text-container">
+        <div class="info-panel__text">Newly Remodeled Interior</div>
+        <div class="info-panel__text--tiny">Come see our brand new dining room!</div>
+        <a class="button-link button-link--black js-button-press" href="#">Details</a>
+    </div>
+</section>
+
+<section class="info-panel info-panel--small">
+    <div class="info-panel__image info-panel__image--catering"></div>
+    <div class="info-panel__text-container info-panel__text-container--low">
+        <div class="info-panel__text">Custom Catering</div>
+        <a class="button-link button-link--black js-button-press" href="#">Order Now</a>
+    </div>
+</section>
+
+
 
 
 <% include ../partials/footer %>
