@@ -2,8 +2,8 @@
 // font-family: 'Jua', sans-serif;
 // font-family: 'East Sea Dokdo', cursive;
 
-$tablet: 50.1rem; //800pixel android tablets
-$desktop: 79rem;  //720p and larger screens
+$tablet: 41rem; 
+$desktop: 65rem;  
 $border-color: #FAFAF2;
 $mobile-padding: 4.2rem;
 $desktop-padding: 5.6rem;
@@ -40,6 +40,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
 .page-border {
   @include mobile-cutoff() {
   position: fixed;
@@ -69,7 +73,6 @@ nav {
   font-size: 1.1rem;
   // overflow: hidden;
   a{
-    text-decoration: none;
     color: black;
   }
   .nav-logo, .nav-logo img {
@@ -104,6 +107,7 @@ nav {
     width: 5rem;
     text-align: center;
   }
+  //breakpoints
   @include mobile-cutoff() {
     height: 4.7rem;
     margin: $small-border - .1rem auto;
@@ -169,18 +173,20 @@ nav {
   overflow: hidden;
   img {
     position: relative;
-    width: 200vw;
-    left: -56vw;
+    width: 185vw;
+    left: -40vw;
+    top: -20vw;
+    transform: rotate(100deg);
   }
-  .text1 {
+  .splash-image__text1 {
     position: absolute;
     top: 6.2rem;
     left: 3vw;
     font-family: 'Hi Melody', cursive;
     font-size: 3.8rem;
-    color: #B3073B;
+    color: #B02124;
   }
-  .text2 {
+  .splash-image__text2 {
     position: absolute;
     top: 9.7rem;
     left: 3vw;
@@ -189,6 +195,7 @@ nav {
     font-size: 2.5rem;
     color: #04C714;
   }
+  //breakpoints
   @include mobile-cutoff() {
     max-width: 100%;
     margin: auto;
@@ -196,13 +203,15 @@ nav {
     img {
       width: 100%;
       left: 0;
+      top: 1rem;;
+      transform: rotate(0deg);
     }
-    .text1 {
+    .splash-image__text1 {
       font-size: 5rem;
       left: 7vw;
       top: $desktop-padding + 1.5rem;;
     }
-    .text2 {
+    .splash-image__text2 {
       font-size: 3rem;
       top: $desktop-padding + 6.15rem;
       left: 7vw;
@@ -211,12 +220,12 @@ nav {
   @include desktop-cutoff() {
     max-height: 100vh;
     // max-width: 100%;
-    .text1 {
+    .splash-image__text1 {
       font-size: 6.5rem;
       left: 10vw;
       top: $jumbo-padding + 1.5rem;
     }
-    .text2 {
+    .splash-image__text2 {
       font-size: 4.5rem;
       top: $jumbo-padding + 6.75rem;
       left: 10vw;
@@ -224,44 +233,139 @@ nav {
   }
 }
 
+//info panels - iced milk frosties + locally sourced===================================
+@mixin panel($height) {
+  position: relative;
+  width: 100%;
+  height: $height;
+  overflow: hidden;
+  margin-top: $small-border;
+}
+@mixin text-container($margin, $font, $font-size) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: $margin auto;
+  font-size: $font-size;
+  text-align: center;
+  font-family: $font, sans-serif;
+}
+
+.info-panel {
+  @include panel(30rem);
+  .info-panel__image {
+    background: url("../images/drinks/showcase-drink2.jpg") no-repeat 0 100%;
+    background-size: 100% auto;
+    height: 100%;
+  }
+  .info-panel__text-container {
+    @include text-container(1.5rem, 'Jua', 2.5rem);
+    width: 80%;
+    height: 17rem;
+  }
+  .info-panel__text1 {
+    color: #1890f2;
+  }
+  .info-panel__text2 {
+    position: relative;
+    color: #1890f2;
+    font-size: 3rem;
+    font-weight: bold;
+    top: -1rem;
+  }
+  a {
+    display: inline-block;
+    height: 4rem;
+    width: 17rem;
+  }
+  .info-panel__text3 {
+    position: relative;
+    margin: auto;
+    top: -.5rem;
+    height: 4rem;
+    width: 17rem;
+    color: purple;
+    line-height: 4rem;
+    background: #1890f2;
+    border-radius: 12px;
+    box-shadow: 0 2px #888888;
+    &:hover {
+      background: #4ca5ee;
+    }
+  }
+  .pressed {
+    height: 3.93rem;
+    transform: translate(0, .07rem);
+    // box-shadow: 0 0px #888888;
+    background: #1890f2 !important;
+  }
+  @include mobile-cutoff() {
+    height: 25rem;
+  }
+}
+
+//locally sourced panel
+.info-panel2 {
+  @include panel(16rem);
+  .local-image {
+    background: url("../images/local/showcase-local.jpg") no-repeat 50% 50%;
+    background-size: 135% auto;
+    height: 100%;
+  }
+  .local-text-container {
+    @include text-container(1.5rem, 'Jua', 2.5rem);
+  }
+}
+
 //showcase section=======================================================================
 $showcase-zoom-out: 100%;
 $showcase-zoom-in: 130%;
+$rotation-offset: 40.8deg;
 
 .showcase-scroll-wrapper {
   display: flex;
-  // overflow-y: hidden;
   overflow-x: scroll;
   margin: $small-border;
   margin-top: $small-border - .1rem;
+  @include mobile-cutoff() {
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 98%;
+  }
+  @include desktop-cutoff() {
+    width: 98.5%;
+  }
 }
 
 .showcase-wrapper {
   position: relative;
-  flex: 0 0 70vmin;
-  height: 60vmin;
-  margin-right: $small-border;
+  flex: 0 0 70vw;
+  height: 70vw * .857;
   overflow: hidden;
+  margin-right: $small-border;
+  border: 1px solid black;
   .showcase-box1 {
-    width: 100vmin;
-    height: 85vmin;
+    width: 145%;
+    height: 123.25%;
     background: black;
   }
   .showcase-box1 img{
     width: 120%;
     opacity: .5;
-    transition: transform .75s ease, opacity 1s ease;
+    transition: transform .75s ease, opacity 1.5s ease;
   }
   .showcase-box2 {
-    border: 1px solid white;
+    border: 1px solid black;
     overflow: hidden;
     position: absolute;
-    width: 120vmin;
-    height: 80vmin;
-    top: 33.5%;
-    left: 2%;
+    width: 163.5%;
+    height: 130%;
+    top: 35.3%;
+    left: 3.8%;
     background: black;
-    transform: rotate(-40.6deg);
+    transform: rotate(-$rotation-offset);
     transition: transform .75s ease;
   }
   .showcase-box2 img {
@@ -270,23 +374,50 @@ $showcase-zoom-in: 130%;
     width: 110%;
     opacity: .5;
     transform: rotate(40.6deg);
-    transition: transform .75s ease, opacity 1s ease;
+    transition: transform .75s ease, opacity 1.5s ease;
   }
-  //hover section
+  //animations section
   .showcase-box1 .showcase-box1-image-transform {
-    transform: translate(-20.5%, -13%) scale(.75);
+    transform: translate(-19.5%, -13%) scale(.75);
     opacity: 1;
   }
   .showcase-box2-transform-down {
-    transform: translate(23%, 23%) rotate(-40.6deg);
+    transform: translate(23%, 23%) rotate(-$rotation-offset);
   }
 
   .showcase-box2 .showcase-box2-image-transform {
-    transform: translate(2.5%, 14%) scale(.75) rotate(40.6deg);
+    transform: translate(2.5%, 15%) scale(.75) rotate($rotation-offset);
     opacity: 1;
   }
   .showcase-box2-transform-up {
-    transform: translate(-23%, -23%) rotate(-40.6deg);
+    transform: translate(-22%, -24.5%) rotate(-$rotation-offset);
+  }
+  //breakpoints
+  @include mobile-cutoff() {
+    flex: 1 1 49%;
+    height: 48vw * .857;
+    margin-bottom: $small-border;
+  }
+  @include desktop-cutoff() {
+    flex: 1 1 24.25%;
+    height: 23.5vw * .857;
+  }
+}
+
+@include mobile-cutoff() {
+  .showcase-wrapper {
+    margin-right: 0;
+  }
+  .showcase-wrapper:nth-child(odd) {
+    margin-right: $small-border;
+  }
+}
+@include desktop-cutoff() {
+  .showcase-wrapper {
+    margin-right: 1% !important;
+  }
+  .showcase-wrapper:nth-child(4) {
+    margin-right: 0!important;
   }
 }
 
