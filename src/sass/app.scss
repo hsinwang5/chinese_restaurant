@@ -235,7 +235,6 @@ nav {
 
 //info panels ==========================================================================
 
-//new smoothies panel
 .info-panel {
   position: relative;
   width: 100%;
@@ -243,10 +242,8 @@ nav {
   overflow: hidden;
   margin-top: $small-border;
 }
-.info-panel__image {
-  background: url("../images/drinks/showcase-drink2.jpg") no-repeat 0 100%;
-  background-size: 105% auto;
-  height: 100%;
+.info-panel--small {
+  height: 17rem;
 }
 .info-panel__text-container {
   position: absolute;
@@ -256,24 +253,11 @@ nav {
   margin: 1.5rem auto;
   font-size: 2.5rem;
   text-align: center;
-  font-family: 'Jua', sans-serif;
   width: 80%;
   height: 17rem;
 }
-.info-panel__text--blue {
-  color: #1890f2;
-}
-.info-panel__text--big-blue {
-  position: relative;
-  color: #1890f2;
-  font-size: 3rem;
-  font-weight: bold;
-  top: -1rem;
-}
 .button-link {
   display: inline-block;
-  height: 4rem;
-  width: 17rem;
   position: relative;
   margin: auto;
   top: -.5rem;
@@ -289,63 +273,106 @@ nav {
     background: black;
   }
 }
-.js-pressed {
-  height: 3.93rem;
-  transform: translate(0, .07rem);
-  // box-shadow: 0 0px #888888;
-  background: #1890f2 !important;
-}
-@include mobile-cutoff() {
-  .info-panel {
-    height: 25rem;
-  }
-  .info-panel__image {
-    background: url("../images/drinks/showcase-drink3.jpg") no-repeat 0% 60%;
-    background-size: 130% auto;
-  }
-  .info-panel__text-container {
-    width: 50%;
-    top: 18%;
-    right: 45%;
-  }
-}
-
-//locally sourced panel
-.info-panel--small {
-  height: 17rem;
-}
-.info-panel__image--local {
-  background: url("../images/local/showcase-local.jpg") no-repeat 50% 50%;
-  background-size: 135% auto;
-}
-.info-panel__text--green {
-  color: #056305;
-}
 .button-link--green {
   margin-top: 1rem;
   background: #046904;
 }
-
-//interior panel
-.info-panel__image--remodel {
-  background: url("../images/misc/showcase-remodel.jpg") no-repeat 50% 25%;
-  background-size: 100% auto;
-}
-.info-panel__text--tiny {
-  font-size: 1.8rem;
-}
-
-//Custom Catering panel
-.info-panel__image--catering {
-  background: url("../images/misc/showcase-catering-mobile.jpg") no-repeat 50% 25%;
-  background-size: 100% auto;
-}
-.info-panel__text-container--low {
-  margin-top: 5rem;
-}
 .button-link--black {
   margin-top: 1rem;
   background: rgba(240, 240, 240, 1);
+}
+.js-button-pressed {
+  height: 3.93rem;
+  transform: translate(0, .07rem);
+  background: #1890f2 !important;
+}
+.info-panel__text {
+  font-family: 'Jua', sans-serif;
+}
+.info-panel__text--small {
+  font-size: 1.8rem;
+}
+.info-panel__text--big {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.info-panel__text--blue {
+  color: #1890f2;
+}
+.info-panel__text--green {
+  color: #056305;
+}
+.info-panel__text--big-blue {
+  color: #1890f2;
+}
+
+//new smoothies panel
+.info-panel--drinks {
+  background: url("../images/drinks/showcase-drink2.jpg") no-repeat 0 100%;
+  background-size: 105% auto;
+}
+.info-panel--drinks .info-panel__text--big {
+  position: relative;
+  top: -1rem;
+}
+
+//locally sourced panel
+.info-panel--local {
+  background: url("../images/local/showcase-local.jpg") no-repeat 50% 50%;
+  background-size: 135% auto;
+}
+.info-panel--local .info-panel__text-container {
+  margin-top: 3.5rem;
+}
+
+//interior panel
+.info-panel--interior {
+  background: url("../images/misc/showcase-remodel.jpg") no-repeat 50% 25%;
+  background-size: 100% auto;
+}
+
+//Custom Catering panel
+.info-panel--catering {
+  background: url("../images/misc/showcase-catering-mobile.jpg") no-repeat 50% 25%;
+  background-size: 100% auto;
+}
+.info-panel--catering .info-panel__text-container {
+  margin-top: 5rem;
+}
+
+@include mobile-cutoff() {
+  .info-panel {
+    height: 25rem;
+  }
+  .info-panel--drinks {
+    background: url("../images/drinks/showcase-drink3.jpg") no-repeat 0% 60%;
+    background-size: 130% auto;
+  }
+  .info-panel--drinks .info-panel__text-container {
+    width: 50%;
+    top: 18%;
+    right: 45%;
+  }
+  .info-panel--small {
+    height: 20rem;
+  }
+  .info-panel--local {
+    background-size: 100% auto;
+  }
+  .info-panel--local .info-panel__text-container {
+    // left: 25%;
+    top: 4%;
+  }
+  .info-panel--interior {
+    background-position: 50% 50%;
+  }
+  .info-panel--interior .info-panel__text-container {
+    margin-top: 6rem;
+  }
+  .info-panel--catering {
+    background: url("../images/misc/showcase-catering-desktop.jpg") no-repeat 50% 25%;
+    background-size: 100% auto;
+  }
 }
 
 //showcase section=======================================================================
@@ -353,7 +380,7 @@ $showcase-zoom-out: 100%;
 $showcase-zoom-in: 130%;
 $rotation-offset: 40.8deg;
 
-.showcase-scroll-wrapper {
+.h-scroll-container {
   display: flex;
   overflow-x: scroll;
   margin: $small-border;
@@ -369,24 +396,23 @@ $rotation-offset: 40.8deg;
   }
 }
 
-.showcase-wrapper {
+.diagonal-box {
   position: relative;
   flex: 0 0 65vw;
   height: 65vw * .857;
   overflow: hidden;
   margin-right: $small-border;
   border: 1px solid black;
-  .showcase-box1 {
+  .diagonal-box__top {
     width: 145%;
     height: 123.25%;
     background: black;
   }
-  .showcase-box1 img{
+  .diagonal-box__top-image{
     width: 120%;
-    // opacity: .5;
     transition: transform .75s ease, opacity 1.5s ease;
   }
-  .showcase-box2 {
+  .diagonal-box__bottom {
     border: 1px solid black;
     overflow: hidden;
     position: absolute;
@@ -398,28 +424,27 @@ $rotation-offset: 40.8deg;
     transform: rotate(-$rotation-offset);
     transition: transform .75s ease;
   }
-  .showcase-box2 img {
+  .diagonal-box__bottom-image {
     position: absolute;
     top: -30%;
     width: 110%;
-    // opacity: .5;
     transform: rotate(40.6deg);
     transition: transform .75s ease, opacity 1.5s ease;
   }
   //animations section
-  .showcase-box1 .showcase-box1-image-transform {
+  .js-top-image-transform {
     transform: translate(-19.5%, -13%) scale(.75);
     opacity: 1;
   }
-  .showcase-box2-transform-down {
+  .js-diagonal-slide-down {
     transform: translate(23%, 23%) rotate(-$rotation-offset);
   }
 
-  .showcase-box2 .showcase-box2-image-transform {
+  .js-bottom-image-transform {
     transform: translate(2.5%, 15%) scale(.75) rotate($rotation-offset);
     opacity: 1;
   }
-  .showcase-box2-transform-up {
+  .js-diagonal-slide-up {
     transform: translate(-22%, -24.5%) rotate(-$rotation-offset);
   }
   //breakpoints
@@ -435,18 +460,18 @@ $rotation-offset: 40.8deg;
 }
 
 @include mobile-cutoff() {
-  .showcase-wrapper {
+  .diagonal-box {
     margin-right: 0;
   }
-  .showcase-wrapper:nth-child(odd) {
+  .diagonal-box:nth-child(odd) {
     margin-right: $small-border;
   }
 }
 @include desktop-cutoff() {
-  .showcase-wrapper {
+  .diagonal-box {
     margin-right: 1% !important;
   }
-  .showcase-wrapper:nth-child(4) {
+  .diagonal-box:nth-child(4) {
     margin-right: 0!important;
   }
 }

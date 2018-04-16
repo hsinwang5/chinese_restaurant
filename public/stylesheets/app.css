@@ -176,10 +176,8 @@ nav {
   overflow: hidden;
   margin-top: 0.8rem; }
 
-.info-panel__image {
-  background: url("../images/drinks/showcase-drink2.jpg") no-repeat 0 100%;
-  background-size: 105% auto;
-  height: 100%; }
+.info-panel--small {
+  height: 17rem; }
 
 .info-panel__text-container {
   position: absolute;
@@ -189,24 +187,11 @@ nav {
   margin: 1.5rem auto;
   font-size: 2.5rem;
   text-align: center;
-  font-family: 'Jua', sans-serif;
   width: 80%;
   height: 17rem; }
 
-.info-panel__text--blue {
-  color: #1890f2; }
-
-.info-panel__text--big-blue {
-  position: relative;
-  color: #1890f2;
-  font-size: 3rem;
-  font-weight: bold;
-  top: -1rem; }
-
 .button-link {
   display: inline-block;
-  height: 4rem;
-  width: 17rem;
   position: relative;
   margin: auto;
   top: -.5rem;
@@ -221,84 +206,118 @@ nav {
     background: #4ca5ee;
     background: black; }
 
-.js-pressed {
-  height: 3.93rem;
-  transform: translate(0, 0.07rem);
-  background: #1890f2 !important; }
-
-@media only screen and (min-width: 41rem) {
-  .info-panel {
-    height: 25rem; }
-  .info-panel__image {
-    background: url("../images/drinks/showcase-drink3.jpg") no-repeat 0% 60%;
-    background-size: 130% auto; }
-  .info-panel__text-container {
-    width: 50%;
-    top: 18%;
-    right: 45%; } }
-
-.info-panel--small {
-  height: 17rem; }
-
-.info-panel__image--local {
-  background: url("../images/local/showcase-local.jpg") no-repeat 50% 50%;
-  background-size: 135% auto; }
-
-.info-panel__text--green {
-  color: #056305; }
-
 .button-link--green {
   margin-top: 1rem;
   background: #046904; }
-
-.info-panel__image--remodel {
-  background: url("../images/misc/showcase-remodel.jpg") no-repeat 50% 25%;
-  background-size: 100% auto; }
-
-.info-panel__text--tiny {
-  font-size: 1.8rem; }
-
-.info-panel__image--catering {
-  background: url("../images/misc/showcase-catering-mobile.jpg") no-repeat 50% 25%;
-  background-size: 100% auto; }
-
-.info-panel__text-container--low {
-  margin-top: 5rem; }
 
 .button-link--black {
   margin-top: 1rem;
   background: #f0f0f0; }
 
-.showcase-scroll-wrapper {
+.js-button-pressed {
+  height: 3.93rem;
+  transform: translate(0, 0.07rem);
+  background: #1890f2 !important; }
+
+.info-panel__text {
+  font-family: 'Jua', sans-serif; }
+
+.info-panel__text--small {
+  font-size: 1.8rem; }
+
+.info-panel__text--big {
+  font-size: 3rem;
+  font-weight: bold; }
+
+.info-panel__text--blue {
+  color: #1890f2; }
+
+.info-panel__text--green {
+  color: #056305; }
+
+.info-panel__text--big-blue {
+  color: #1890f2; }
+
+.info-panel--drinks {
+  background: url("../images/drinks/showcase-drink2.jpg") no-repeat 0 100%;
+  background-size: 105% auto; }
+
+.info-panel--drinks .info-panel__text--big {
+  position: relative;
+  top: -1rem; }
+
+.info-panel--local {
+  background: url("../images/local/showcase-local.jpg") no-repeat 50% 50%;
+  background-size: 135% auto; }
+
+.info-panel--local .info-panel__text-container {
+  margin-top: 3.5rem; }
+
+.info-panel--interior {
+  background: url("../images/misc/showcase-remodel.jpg") no-repeat 50% 25%;
+  background-size: 100% auto; }
+
+.info-panel--catering {
+  background: url("../images/misc/showcase-catering-mobile.jpg") no-repeat 50% 25%;
+  background-size: 100% auto; }
+
+.info-panel--catering .info-panel__text-container {
+  margin-top: 5rem; }
+
+@media only screen and (min-width: 41rem) {
+  .info-panel {
+    height: 25rem; }
+  .info-panel--drinks {
+    background: url("../images/drinks/showcase-drink3.jpg") no-repeat 0% 60%;
+    background-size: 130% auto; }
+  .info-panel--drinks .info-panel__text-container {
+    width: 50%;
+    top: 18%;
+    right: 45%; }
+  .info-panel--small {
+    height: 20rem; }
+  .info-panel--local {
+    background-size: 100% auto; }
+  .info-panel--local .info-panel__text-container {
+    top: 4%; }
+  .info-panel--interior {
+    background-position: 50% 50%; }
+  .info-panel--interior .info-panel__text-container {
+    margin-top: 6rem; }
+  .info-panel--catering {
+    background: url("../images/misc/showcase-catering-desktop.jpg") no-repeat 50% 25%;
+    background-size: 100% auto; } }
+
+.h-scroll-container {
   display: flex;
   overflow-x: scroll;
   margin: 0.8rem;
   margin-top: 0.7rem; }
   @media only screen and (min-width: 41rem) {
-    .showcase-scroll-wrapper {
+    .h-scroll-container {
       flex-wrap: wrap;
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
       width: 98%; } }
   @media only screen and (min-width: 65rem) {
-    .showcase-scroll-wrapper {
+    .h-scroll-container {
       width: 98.5%; } }
 
-.showcase-wrapper {
+.diagonal-box {
   position: relative;
   flex: 0 0 65vw;
   height: 55.705vw;
   overflow: hidden;
   margin-right: 0.8rem;
   border: 1px solid black; }
-  .showcase-wrapper .showcase-box1 {
+  .diagonal-box .diagonal-box__top {
     width: 145%;
     height: 123.25%;
     background: black; }
-  .showcase-wrapper .showcase-box1 img {
+  .diagonal-box .diagonal-box__top-image {
     width: 120%;
     transition: transform .75s ease, opacity 1.5s ease; }
-  .showcase-wrapper .showcase-box2 {
+  .diagonal-box .diagonal-box__bottom {
     border: 1px solid black;
     overflow: hidden;
     position: absolute;
@@ -309,40 +328,40 @@ nav {
     background: black;
     transform: rotate(-40.8deg);
     transition: transform .75s ease; }
-  .showcase-wrapper .showcase-box2 img {
+  .diagonal-box .diagonal-box__bottom-image {
     position: absolute;
     top: -30%;
     width: 110%;
     transform: rotate(40.6deg);
     transition: transform .75s ease, opacity 1.5s ease; }
-  .showcase-wrapper .showcase-box1 .showcase-box1-image-transform {
+  .diagonal-box .js-top-image-transform {
     transform: translate(-19.5%, -13%) scale(0.75);
     opacity: 1; }
-  .showcase-wrapper .showcase-box2-transform-down {
+  .diagonal-box .js-diagonal-slide-down {
     transform: translate(23%, 23%) rotate(-40.8deg); }
-  .showcase-wrapper .showcase-box2 .showcase-box2-image-transform {
+  .diagonal-box .js-bottom-image-transform {
     transform: translate(2.5%, 15%) scale(0.75) rotate(40.8deg);
     opacity: 1; }
-  .showcase-wrapper .showcase-box2-transform-up {
+  .diagonal-box .js-diagonal-slide-up {
     transform: translate(-22%, -24.5%) rotate(-40.8deg); }
   @media only screen and (min-width: 41rem) {
-    .showcase-wrapper {
+    .diagonal-box {
       flex: 1 1 49%;
       height: 41.136vw;
       margin-bottom: 0.8rem; } }
   @media only screen and (min-width: 65rem) {
-    .showcase-wrapper {
+    .diagonal-box {
       flex: 1 1 24.25%;
       height: 20.1395vw; } }
 
 @media only screen and (min-width: 41rem) {
-  .showcase-wrapper {
+  .diagonal-box {
     margin-right: 0; }
-  .showcase-wrapper:nth-child(odd) {
+  .diagonal-box:nth-child(odd) {
     margin-right: 0.8rem; } }
 
 @media only screen and (min-width: 65rem) {
-  .showcase-wrapper {
+  .diagonal-box {
     margin-right: 1% !important; }
-  .showcase-wrapper:nth-child(4) {
+  .diagonal-box:nth-child(4) {
     margin-right: 0 !important; } }
