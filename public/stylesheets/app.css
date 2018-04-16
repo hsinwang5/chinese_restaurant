@@ -28,8 +28,8 @@ a {
 
 nav {
   position: fixed;
+  bottom: 0;
   left: 0;
-  right: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -41,8 +41,10 @@ nav {
   nav a {
     color: black; }
   nav .nav__logo, nav .nav__logo img {
-    width: 90px;
-    height: 100%;
+    position: relative;
+    bottom: .4rem;
+    width: 6.5rem;
+    height: 4.8rem;
     margin-left: .1rem; }
   nav .nav__main-section {
     display: flex;
@@ -68,6 +70,7 @@ nav {
     text-align: center; }
   @media only screen and (min-width: 41rem) {
     nav {
+      top: 0;
       height: 4.7rem;
       margin: 0.7rem auto;
       border: 0.9rem solid #FAFAF2;
@@ -114,60 +117,56 @@ nav {
         line-height: 5.2rem; } }
 
 .splash-image {
-  position: relative;
-  max-height: 570px;
-  padding-top: 4.2rem;
+  background: url("../images/food/hero-2-mobile.jpg") no-repeat 0 0;
+  background-size: 100%;
+  height: 34rem;
+  text-align: center;
   overflow: hidden; }
-  .splash-image img {
+  .splash-image .splash-image__text-container {
     position: relative;
-    width: 185vw;
-    left: -40vw;
-    top: -20vw;
-    transform: rotate(100deg); }
+    top: 2.2rem;
+    text-align: center; }
   .splash-image .splash-image__text1 {
-    position: absolute;
-    top: 6.2rem;
-    left: 3vw;
     font-family: 'Hi Melody', cursive;
-    font-size: 3.8rem;
+    font-size: 3.7rem;
     color: #B02124; }
   .splash-image .splash-image__text2 {
-    position: absolute;
-    top: 9.7rem;
-    left: 3vw;
-    width: 80%;
+    margin-top: -2.8rem;
     font-family: 'East Sea Dokdo', cursive;
     font-size: 2.5rem;
     color: #04C714; }
   @media only screen and (min-width: 41rem) {
     .splash-image {
-      max-width: 100%;
+      background: url("../images/food/hero-2.jpg") no-repeat 15% 0;
+      height: 42rem;
       margin: auto;
       box-sizing: content-box; }
-      .splash-image img {
-        width: 100%;
-        left: 0;
-        top: 1rem;
-        transform: rotate(0deg); }
+      .splash-image .splash-image__text-container {
+        top: 6.5rem;
+        margin-left: 1rem;
+        width: 475px; }
       .splash-image .splash-image__text1 {
-        font-size: 5rem;
-        left: 7vw;
-        top: 7.1rem; }
+        font-size: 5rem; }
       .splash-image .splash-image__text2 {
         font-size: 3rem;
-        top: 11.75rem;
-        left: 7vw; } }
+        margin-top: -3.5rem; } }
   @media only screen and (min-width: 65rem) {
     .splash-image {
-      max-height: 100vh; }
+      height: 44rem;
+      background-position: 0 0;
+      background-size: 100%; }
+      .splash-image .splash-image__text-container {
+        top: 6rem;
+        left: -5rem;
+        width: 800px; }
       .splash-image .splash-image__text1 {
-        font-size: 6.5rem;
-        left: 10vw;
-        top: 7.95rem; }
+        font-size: 6.5rem; }
       .splash-image .splash-image__text2 {
-        font-size: 4.5rem;
-        top: 13.2rem;
-        left: 10vw; } }
+        font-size: 4rem;
+        margin-top: -5rem; } }
+  @media only screen and (min-width: 119rem) {
+    .splash-image {
+      height: 57rem; } }
 
 .info-panel {
   position: relative;
@@ -201,10 +200,14 @@ nav {
   line-height: 4rem;
   background: #1890f2;
   border-radius: 12px;
-  box-shadow: 0 2px #888888; }
+  box-shadow: 0 2px #888888;
+  font-family: 'Jua', sans-serif; }
   .button-link:hover {
-    background: #4ca5ee;
     background: black; }
+  .button-link:active {
+    height: 3.93rem;
+    transform: translate(0, 0.07rem);
+    background: #1890f2; }
 
 .button-link--green {
   margin-top: 1rem;
@@ -213,11 +216,6 @@ nav {
 .button-link--black {
   margin-top: 1rem;
   background: #f0f0f0; }
-
-.js-button-pressed {
-  height: 3.93rem;
-  transform: translate(0, 0.07rem);
-  background: #1890f2 !important; }
 
 .info-panel__text {
   font-family: 'Jua', sans-serif; }
@@ -347,8 +345,7 @@ nav {
   @media only screen and (min-width: 41rem) {
     .diagonal-box {
       flex: 1 1 49%;
-      height: 41.136vw;
-      margin-bottom: 0.8rem; } }
+      height: 41.136vw; } }
   @media only screen and (min-width: 65rem) {
     .diagonal-box {
       flex: 1 1 24.25%;
@@ -365,3 +362,42 @@ nav {
     margin-right: 1% !important; }
   .diagonal-box:nth-child(4) {
     margin-right: 0 !important; } }
+
+.footer {
+  width: 100%;
+  margin-bottom: 8rem; }
+
+.footer__social-panel {
+  height: 2.7rem;
+  line-height: 2.7rem;
+  background: #919191;
+  text-align: center;
+  font-size: 1.5rem; }
+
+.footer__social-panel .icon {
+  margin-right: 23px; }
+
+.footer__mobile-stores {
+  width: 100%;
+  height: 4.9rem;
+  line-height: 6rem;
+  text-align: center;
+  background: #434544; }
+
+.footer__mobile-stores img {
+  margin-top: 11px; }
+
+.footer__mobile-stores img:nth-child(1) {
+  height: 55px;
+  width: 131px; }
+
+.footer__mobile-stores img:nth-child(2) {
+  height: 60px;
+  width: 131px;
+  padding-top: 5px; }
+
+.footer__text {
+  background: #434544;
+  height: 3.5rem;
+  text-align: center;
+  color: white; }

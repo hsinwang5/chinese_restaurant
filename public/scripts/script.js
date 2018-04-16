@@ -29,18 +29,6 @@ for (let i = 0; i < navLinks.length; i++) {
     });
 }
 
-//iced milk frosties advert behavior=========================================
-const linkButtons = document.querySelectorAll(".js-button-press");
-
-for (let i = 0; i < linkButtons.length; i++) {
-    linkButtons[i].addEventListener(mousedown, function(){
-        this.classList.add("js-button-pressed")
-    });
-    linkButtons[i].addEventListener(mouseup, function(){
-        this.classList.remove("js-button-pressed")
-    });
-}
-
 //showcase panels behavior===================================================
 const showcaseBox1 = document.querySelectorAll(".js-showcase-box1");
 const showcaseBox2 = document.querySelectorAll(".js-showcase-box2");
