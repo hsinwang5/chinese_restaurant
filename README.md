@@ -5,4 +5,4 @@ This is a responsive website for a local Chinese-Japanese restaurant with social
 All Panda Express website functionality is generally included with the exception of copyrighted Panda Express media. 
 Extra features have been added where appropriate to enhance the presentation. 
 
-The code is hand-written in html, sass/scss, and vanilla javascript with node.js backend + express routing. There is an intention to refactor the front-end to React in the future when feasible.
+The code is hand-written in html, sass/scss, and vanilla javascript with node.js backend + express routing. There is an intention to refactor the front-end to React when feasible.
