@@ -37,18 +37,22 @@ for (let i = 0; i < showcaseBox1.length; i++) {
     showcaseBox1[i].addEventListener("mouseenter", function(){
         this.parentNode.childNodes[3].classList.add("js-diagonal-slide-down");
         this.childNodes[1].classList.add("js-top-image-transform");
+        this.childNodes[3].classList.add("js-text-slide");
     });
     showcaseBox1[i].addEventListener("mouseleave", function(){
         this.parentNode.childNodes[3].classList.remove("js-diagonal-slide-down");
         this.childNodes[1].classList.remove("js-top-image-transform");
+        this.childNodes[3].classList.remove("js-text-slide");
     });
     showcaseBox2[i].addEventListener("mouseenter", function(){
         this.classList.add("js-diagonal-slide-up");
         this.childNodes[1].classList.add("js-bottom-image-transform");
+        this.childNodes[3].classList.add("js-text-slide-bot");
     });
     showcaseBox2[i].addEventListener("mouseleave", function(){
         this.classList.remove("js-diagonal-slide-up");
         this.childNodes[1].classList.remove("js-bottom-image-transform");
+        this.childNodes[3].classList.remove("js-text-slide-bot");
     });
 }
 

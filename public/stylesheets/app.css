@@ -8,7 +8,8 @@ html {
 
 body {
   background: #FAFAF2;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: 'Jua', sans-serif; }
 
 a {
   text-decoration: none; }
@@ -303,18 +304,31 @@ nav {
 
 .diagonal-box {
   position: relative;
-  flex: 0 0 65vw;
-  height: 55.705vw;
+  flex: 0 0 60vw;
+  height: 51.42vw;
   overflow: hidden;
   margin-right: 0.8rem;
   border: 1px solid black; }
   .diagonal-box .diagonal-box__top {
     width: 145%;
-    height: 123.25%;
+    height: 100%;
     background: black; }
   .diagonal-box .diagonal-box__top-image {
     width: 120%;
     transition: transform .75s ease, opacity 1.5s ease; }
+  .diagonal-box .diagonal-box__text {
+    width: 90%;
+    height: 51vw;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    transform: translate(0, 75%) scale(0.1);
+    transition: transform .5s ease-out; }
   .diagonal-box .diagonal-box__bottom {
     border: 1px solid black;
     overflow: hidden;
@@ -332,14 +346,29 @@ nav {
     width: 110%;
     transform: rotate(40.6deg);
     transition: transform .75s ease, opacity 1.5s ease; }
+  .diagonal-box .diagonal-box__text--bot {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 23%;
+    left: 29%;
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    transform: translate(-70%, 75%) rotate(40.8deg) scale(0.1);
+    transition: transform .5s ease-out; }
   .diagonal-box .js-top-image-transform {
     transform: translate(-19.5%, -13%) scale(0.75);
-    opacity: 1; }
+    opacity: .75; }
   .diagonal-box .js-diagonal-slide-down {
     transform: translate(23%, 23%) rotate(-40.8deg); }
+  .diagonal-box .js-text-slide {
+    transform: translate(0, 0) scale(1); }
+  .diagonal-box .js-text-slide-bot {
+    transform: translate(0, 0) scale(1) rotate(40.8deg); }
   .diagonal-box .js-bottom-image-transform {
     transform: translate(2.5%, 15%) scale(0.75) rotate(40.8deg);
-    opacity: 1; }
+    opacity: .75; }
   .diagonal-box .js-diagonal-slide-up {
     transform: translate(-22%, -24.5%) rotate(-40.8deg); }
   @media only screen and (min-width: 41rem) {

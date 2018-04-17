@@ -43,6 +43,7 @@ html {
 body {
   background: $border-color;
   overflow-x: hidden;
+  font-family: 'Jua', sans-serif
 }
 
 a {
@@ -405,19 +406,33 @@ $rotation-offset: 40.8deg;
 
 .diagonal-box {
   position: relative;
-  flex: 0 0 65vw;
-  height: 65vw * .857;
+  flex: 0 0 60vw;
+  height: 60vw * .857;
   overflow: hidden;
   margin-right: $small-border;
   border: 1px solid black;
   .diagonal-box__top {
     width: 145%;
-    height: 123.25%;
+    height: 100%;
     background: black;
   }
   .diagonal-box__top-image{
     width: 120%;
     transition: transform .75s ease, opacity 1.5s ease;
+  }
+  .diagonal-box__text {
+    width: 90%;
+    height: 51vw;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    transform: translate(0, 75%) scale(.1);
+    transition: transform .5s ease-out;
   }
   .diagonal-box__bottom {
     border: 1px solid black;
@@ -438,18 +453,37 @@ $rotation-offset: 40.8deg;
     transform: rotate(40.6deg);
     transition: transform .75s ease, opacity 1.5s ease;
   }
+  .diagonal-box__text--bot {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 23%;
+    left: 29%;
+    // right: 0;
+    // margin: auto;
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    transform: translate(-70%, 75%) rotate($rotation-offset) scale(.1);
+    transition: transform .5s ease-out;
+  }
   //animations section
   .js-top-image-transform {
     transform: translate(-19.5%, -13%) scale(.75);
-    opacity: 1;
+    opacity: .75;
   }
   .js-diagonal-slide-down {
     transform: translate(23%, 23%) rotate(-$rotation-offset);
   }
-
+  .js-text-slide {
+    transform: translate(0, 0) scale(1);
+  }
+  .js-text-slide-bot {
+    transform: translate(0, 0) scale(1) rotate($rotation-offset);
+  }
   .js-bottom-image-transform {
     transform: translate(2.5%, 15%) scale(.75) rotate($rotation-offset);
-    opacity: 1;
+    opacity: .75;
   }
   .js-diagonal-slide-up {
     transform: translate(-22%, -24.5%) rotate(-$rotation-offset);
