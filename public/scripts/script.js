@@ -8,26 +8,37 @@ if ('ontouchstart' in window) {
     mosueup = "mouseup"
 }
 
-// const text1 = document.querySelector(".splash-image__text1");
-// const trigger = text1.getBoundingClientRect().y;
-// window.addEventListener("scroll", function(){
-//     if (text.scrollTop > trigger) {
-//         console.log("triggerd!!");
+//social panels onscroll pop-in================================================
+const popInElements = document.querySelectorAll(".info-panel__long-text, .js-showcase-box1");
+let triggerPointsArr = getElementOffsets(popInElements, .9);
+const length = triggerPointsArr.length
+//identifies where popInElements changes element-categories
+//used to distinguish different pop-in behavior for different sections of the page
+const break1 = 4; 
+let removed = false;
+// window.addEventListener("scroll", temp = function(){
+//     if (window.pageYOffset > triggerPoint1) {
+//         for (let i=0; i < longTextPanel.length; i++) {
+//             longTextPanel[i].classList.add("js-longtext-in")
+//             longTextPanel[i].parentNode.childNodes[1].classList.add("js-zpane-fadein");
+//         }
+//         window.removeEventListener("scroll", temp);
 //     }
 // });
 
-//social panels onscroll pop-in================================================
-const socialBar = document.querySelector(".js-trigger");
-const longTextPanel = document.querySelectorAll(".info-panel__long-text");
-let triggerPoint = getElementOffset(socialBar);
-
-window.addEventListener("scroll", x418201825855 = function(){
-    if (window.pageYOffset > triggerPoint) {
-        for (let i=0; i < longTextPanel.length; i++) {
-            longTextPanel[i].classList.add("js-longtext-in")
-            longTextPanel[i].parentNode.childNodes[1].classList.add("js-zpane-fadein");
+window.addEventListener("scroll", temp = function(){
+    for (let i=0; i < length; i++) {
+        if (!removed && i < break1 && window.pageYOffset > triggerPointsArr[i]) {
+            popInElements[i].parentNode.childNodes[3].classList.remove("js-diagonal-slide-down");
+            popInElements[i].childNodes[1].classList.remove("js-top-image-transform");
+            if (i === 3) {
+                removed = true;
+            }
         }
-        window.removeEventListener("scroll", x418201825855);
+        if (i >= break1 && window.pageYOffset > triggerPointsArr[i]) {
+            popInElements[i].classList.add("js-longtext-in")
+            popInElements[i].parentNode.childNodes[1].classList.add("js-zpane-fadein");
+        }
     }
 });
 
@@ -77,21 +88,13 @@ for (let i = 0; i < showcaseBox1.length; i++) {
 }
 
 //function definitions========================================================
-function getElementOffset(element) {
-    return socialBar.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight * .80);
+function getElementOffsets(element, delay = 1) {
+    let arr = [];
+    for (let i = 0; i < element.length; i++) {
+        arr.push(element[i].getBoundingClientRect().top + window.pageYOffset - (window.innerHeight * delay));
+    }
+    return arr;
 }
-
-// function setScrollTrigger(element, runOnce, func) {
-//     let offset = getElementOffset(element);
-//     window.addEventListener("scroll", temp=function(){
-//         if (window.pageYOffset > offset) {
-//             func();
-//             if (runOnce) {
-//                 window.removeEventListener("scroll", temp);
-//             }
-//         }
-//     });
-// }
 
 
 

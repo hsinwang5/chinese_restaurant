@@ -5,11 +5,11 @@
 $tablet: 41rem; 
 $desktop: 65rem; 
 $highdef: 119rem;  
-$border-color: #FAFAF2;
+$border-color: #fcfcf0;
 $mobile-padding: 4.2rem;
 $desktop-padding: 5.6rem;
 $jumbo-padding: 6.45rem;
-$small-border: .8rem;
+$small-border: .9rem;
 $large-border: 1.2rem;
 
 @mixin mobile-cutoff {
@@ -41,7 +41,7 @@ html {
 }
 
 body {
-  background: $border-color;
+  background: white;
   overflow-x: hidden;
   font-family: 'Jua', sans-serif
 }
@@ -73,9 +73,6 @@ a {
 //Nav Bar================================================================================
 nav {
   position: fixed;
-  // left: 0;
-  // right: 0;
-  // top: 90.9%;
   bottom: 0;
   left: 0;
   display: flex;
@@ -83,7 +80,7 @@ nav {
   width: 100%;
   height: 4.2rem;
   z-index: 201;
-  background: rgba(240, 240, 240, 1);
+  background: #078C19;
   font-family: 'Jua', sans-serif;
   font-size: 1.1rem;
   // overflow: hidden;
@@ -109,13 +106,13 @@ nav {
     a {
       height: 0;
       display: block;
-      transition: height .15s ease;
+      transition: height .15s linear;
     }
     .js-highlight-hover {
       border-top: 2px solid rgba(0,0,0,.7);
-      color: rgba(50, 50, 50, 1);
+      color: rgba(180, 180, 180, 1);
       height: 100%;
-      background: linear-gradient(to right, rgba(252, 248, 235, .1), rgba(140, 0, 13, .45), rgba(252, 248, 235, .1));
+      background: rgba(160, 20, 33, .75);
     }
   }
   .nav__cart {
@@ -201,7 +198,7 @@ nav {
     color: #B02124;
   }
   .splash-image__text2 {
-    margin-top: -2.8rem;
+    margin-top: -3.3rem;
     font-family: 'East Sea Dokdo', cursive;
     font-size: 2.5rem;
     color: #04C714;
@@ -213,8 +210,8 @@ nav {
     margin: auto;
     box-sizing: content-box;
     .splash-image__text-container {
-      top: 6.5rem;
-      margin-left: 1rem;;
+      top: 7rem;
+      left: 5%;
       width: 475px;
     }
     .splash-image__text1 {
@@ -222,7 +219,7 @@ nav {
     }
     .splash-image__text2 {
       font-size: 3rem;
-      margin-top: -3.5rem;
+      margin-top: -3.2rem;
     }
   }
   @include desktop-cutoff() {
@@ -230,8 +227,8 @@ nav {
     background-position: 0 0;
     background-size: 100%;
     .splash-image__text-container {
-      top: 6rem;
-      left: -5rem;
+      top: 6.5rem;
+      left: -3%;
       width: 800px;
     }
     .splash-image__text1 {
@@ -244,6 +241,19 @@ nav {
   }
   @include highdef-cutoff() {
     height: 57rem;
+    background-position: 0 15%;
+    .splash-image__text-container {
+      top: 9.5rem;
+      left: 2%;
+      width: 800px;
+    }
+    .splash-image__text1 {
+      font-size: 8rem;
+    }
+    .splash-image__text2 {
+      font-size: 5rem;
+      margin-top: -5rem;
+    }
   }
 }
 
@@ -319,6 +329,18 @@ nav {
 }
 .info-panel__text--big-blue {
   color: #1890f2;
+}
+.info-panel__text--light-green {
+  color: #04C714;
+}
+
+//fresh panel
+.info-panel--fresh {
+  background: url("../images/misc/showcase-fresh.jpg") no-repeat 0 100%;
+  background-size: 110%;
+}
+.info-panel--fresh .info-panel__text-container {
+  top: 6%;
 }
 
 //new smoothies panel
@@ -433,14 +455,25 @@ nav {
     line-height: 3rem;
     font-size: 1.8rem;
   }
+  .info-panel--fresh {
+    background: url("../images/misc/showcase-fresh-h.jpg") no-repeat 0 25%;
+    background-size: 100%;
+  }
   .info-panel--drinks {
     background: url("../images/drinks/showcase-drink3.jpg") no-repeat 0% 60%;
     background-size: 130% auto;
   }
+  .info-panel--fresh .info-panel__text-container {
+    top: 20%;
+  }
   .info-panel--drinks .info-panel__text-container {
+    font-size: 2.6rem;
     width: 50%;
     top: 18%;
     right: 45%;
+  }
+  .info-panel--drinks .button-link {
+    width: 18rem;
   }
   .info-panel--small {
     height: 20rem;
@@ -478,6 +511,14 @@ nav {
   a .pane3 {
     font-size: 3rem;
   }
+  .info-panel__text-container {
+    font-size: 3rem;
+  }
+  .button-link {
+    height: 5rem;
+    line-height: 5rem;
+    width: 20rem;
+  }
 }
 @include desktop-cutoff() {
   a .info-panel {
@@ -490,8 +531,11 @@ nav {
   .info-panel__zpane {
     background-size: 120%;
   }
+  .info-panel--fresh .info-panel__text-container {
+    top: 20%;
+    left: 28%;
+  }
 }
-
 .js-longtext-in {
   transform: translate(0, 0);
 }
@@ -630,6 +674,9 @@ $rotation-offset: 40.8deg;
 }
 
 @include mobile-cutoff() {
+  .h-scroll-container {
+    overflow-x: hidden;
+  }
   .diagonal-box {
     margin-right: 0;
   }
@@ -691,6 +738,9 @@ $rotation-offset: 40.8deg;
 @include mobile-cutoff() {
   .footer {
     margin-top: 0;
+    border-bottom: 4rem solid;
+    border-color: $border-color;
+    margin-bottom: 0;
   }
 }
 
