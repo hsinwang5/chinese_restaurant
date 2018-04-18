@@ -372,6 +372,9 @@ nav {
     right: 45%; }
   .info-panel--drinks .button-link {
     width: 18rem; }
+  .info-panel--interior {
+    background: url("../images/misc/showcase-remodel-h.jpg") no-repeat 0 0;
+    background-size: 100% auto; }
   .info-panel--small {
     height: 20rem; }
   .info-panel--local {
@@ -449,8 +452,7 @@ nav {
   height: 51.42vw;
   overflow: hidden;
   margin-right: 0.9rem;
-  margin-top: 0.8rem;
-  border: 1px solid black; }
+  margin-top: 0.8rem; }
   .diagonal-box .diagonal-box__top {
     width: 145%;
     height: 100%;
@@ -483,7 +485,6 @@ nav {
     transform: translate(-100%, 155%) rotate(40.8deg) scale(0.05);
     transition: transform .5s ease-out; }
   .diagonal-box .diagonal-box__bottom {
-    border: 1px solid black;
     overflow: hidden;
     position: absolute;
     width: 163.5%;
