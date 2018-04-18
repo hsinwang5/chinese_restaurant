@@ -432,7 +432,7 @@ nav {
   display: flex;
   overflow-x: scroll;
   margin: 0.9rem;
-  margin-top: 0.8rem; }
+  margin-top: 0; }
   @media only screen and (min-width: 41rem) {
     .h-scroll-container {
       flex-wrap: wrap;
@@ -449,6 +449,7 @@ nav {
   height: 51.42vw;
   overflow: hidden;
   margin-right: 0.9rem;
+  margin-top: 0.8rem;
   border: 1px solid black; }
   .diagonal-box .diagonal-box__top {
     width: 145%;
@@ -514,7 +515,7 @@ nav {
     transform: translate(-22%, -24.5%) rotate(-40.8deg); }
   @media only screen and (min-width: 41rem) {
     .diagonal-box {
-      flex: 1 1 49%;
+      flex: 1 1 48%;
       height: 41.136vw; }
       .diagonal-box .diagonal-box__text, .diagonal-box .diagonal-box__bottom-text {
         font-size: 6vw; } }

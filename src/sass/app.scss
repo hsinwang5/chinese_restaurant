@@ -557,7 +557,7 @@ $rotation-offset: 40.8deg;
   display: flex;
   overflow-x: scroll;
   margin: $small-border;
-  margin-top: $small-border - .1rem;
+  margin-top: 0;
   @include mobile-cutoff() {
     flex-wrap: wrap;
     overflow-x: scroll;
@@ -575,6 +575,7 @@ $rotation-offset: 40.8deg;
   height: 60vw * .857;
   overflow: hidden;
   margin-right: $small-border;
+  margin-top: $small-border - .1rem;
   border: 1px solid black;
   .diagonal-box__top {
     width: 145%;
@@ -653,7 +654,7 @@ $rotation-offset: 40.8deg;
   }
   //breakpoints
   @include mobile-cutoff() {
-    flex: 1 1 49%;
+    flex: 1 1 48%;
     height: 48vw * .857;
     .diagonal-box__text, .diagonal-box__bottom-text {
       font-size: 6vw;
