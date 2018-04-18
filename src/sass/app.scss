@@ -50,6 +50,12 @@ a {
   text-decoration: none;
 }
 
+.north-pole {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .page-border {
   @include mobile-cutoff() {
   position: fixed;
@@ -378,6 +384,9 @@ nav {
   font-size: 1.4rem;
   color: white;
   z-index: 2;
+  transform: translate(-120%, 0);
+  opacity: 1;
+  transition: transform .3s ease-out;
 }
 .info-panel__logo {
   position: absolute;
@@ -396,6 +405,7 @@ nav {
   height: 100%;
   z-index: 1;
   opacity: 1;
+  transition: opacity 1.5s ease-in;
 }
 .info-panel__zpane--twitter {
   background: url("../images/interior/twitter.jpg") no-repeat 10% 0;
@@ -413,7 +423,6 @@ nav {
   background: url("../images/interior/facebook.jpg") no-repeat 10% 0;
   background-size: 115%;
 }
-
 
 @include mobile-cutoff() {
   .info-panel {
@@ -451,6 +460,47 @@ nav {
   .info-panel--catering {
     background: url("../images/misc/showcase-catering-desktop.jpg") no-repeat 50% 25%;
     background-size: 100% auto;
+  }
+  a .info-panel {
+    height: 21rem;
+  }
+  .info-panel__zpane {
+    background-position: 0 40%;
+  }
+  a .pane1, a .pane2 {
+    display: inline-block;
+    height: 16rem;
+    width: 49%;
+    margin: auto;
+    margin-left: .5%;
+    font-size: 3rem;
+  }
+  a .pane3 {
+    font-size: 3rem;
+  }
+}
+@include desktop-cutoff() {
+  a .info-panel {
+    display: inline-block;
+    height: 25vw;
+    width: 32%;
+    margin: auto;
+    margin-left: 1%;
+  }
+  .info-panel__zpane {
+    background-size: 120%;
+  }
+}
+
+.js-longtext-in {
+  transform: translate(0, 0);
+}
+.js-zpane-fadein {
+  opacity: .7;
+}
+@include highdef-cutoff() {
+  .info-panel__long-text {
+    font-size: 2rem;
   }
 }
 
@@ -636,6 +686,12 @@ $rotation-offset: 40.8deg;
   height: 3.5rem;
   text-align: center;
   color: white;
+}
+
+@include mobile-cutoff() {
+  .footer {
+    margin-top: 0;
+  }
 }
 
 
