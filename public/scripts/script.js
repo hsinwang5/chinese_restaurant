@@ -42,6 +42,20 @@ window.addEventListener("scroll", temp = function(){
     }
 });
 
+//snowing behavior
+const snowflakes = document.querySelectorAll(".js-snow");
+let looper = 0;
+
+setInterval(function(){
+    let randomTime = randomInt(700);
+    // snowflakes[looper].classList.remove("js-falling-snow");
+    letItSnow(looper, randomTime);
+    looper += 1;
+    if (looper === snowflakes.length) {
+        looper = 0;
+    }
+}, 1000);
+
 //Navbar behavior===========================================================
 const navLinks = document.querySelectorAll(".js-nav-item");
 
@@ -94,6 +108,19 @@ function getElementOffsets(element, delay = 1) {
         arr.push(element[i].getBoundingClientRect().top + window.pageYOffset - (window.innerHeight * delay));
     }
     return arr;
+}
+function letItSnow(val, rand) {
+    setTimeout(function(){
+        let temp = randomInt(91) - 1;
+        snowflakes[val].style.left = temp + "%";
+        snowflakes[val].classList.add("js-falling-snow"); 
+    }, rand);
+}
+function randomInt(max) {
+    return Math.floor(Math.random() * (max + 1));
+}
+function randomFloat(max, digits) {
+    return Number((Math.random() * max).toFixed(1));
 }
 
 

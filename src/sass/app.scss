@@ -43,7 +43,7 @@ html {
 body {
   background: white;
   overflow-x: hidden;
-  font-family: 'Jua', sans-serif
+  font-family: 'Jua', sans-serif;
 }
 
 a {
@@ -351,6 +351,33 @@ nav {
 .info-panel--drinks .info-panel__text--big {
   position: relative;
   top: -1rem;
+}
+
+//weather-animation
+.weather-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.weather-container__snow {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  display: inline-block;
+  width: 70px;
+  font-size: 3rem;
+  text-align: center;
+  color: #1890f2;
+}
+.js-falling-snow {
+  animation: snowing 7s infinite linear;
+}
+@keyframes snowing {
+  0% {transform: translate(0, 0);}
+  25% {transform: translate(-20%, 350%);}
+  50% {transform: translate(20%, 700%);}
+  75% {transform: translate(-20%, 1050%);}
+  100% {transform: translate(20%, 1400%);}
 }
 
 //locally sourced panel
