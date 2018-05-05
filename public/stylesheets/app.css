@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0; }
@@ -9,7 +11,7 @@ html {
 body {
   background: white;
   overflow-x: hidden;
-  font-family: 'Jua', sans-serif; }
+  font-family: "Jua", sans-serif; }
 
 a {
   text-decoration: none; }
@@ -41,17 +43,18 @@ nav {
   width: 100%;
   height: 4.2rem;
   z-index: 201;
-  background: #078C19;
-  font-family: 'Jua', sans-serif;
+  background: #078c19;
+  font-family: "Jua", sans-serif;
   font-size: 1.1rem; }
   nav a {
     color: black; }
-  nav .nav__logo, nav .nav__logo img {
+  nav .nav__logo,
+  nav .nav__logo img {
     position: relative;
-    bottom: .4rem;
+    bottom: 0.4rem;
     width: 6.5rem;
     height: 4.8rem;
-    margin-left: .1rem; }
+    margin-left: 0.1rem; }
   nav .nav__main-section {
     display: flex;
     flex-grow: 1; }
@@ -63,7 +66,8 @@ nav {
     nav .nav__item a {
       height: 0;
       display: block;
-      transition: height .15s linear; }
+      transition: height 0.15s linear;
+      background: rgba(160, 20, 33, 0.75); }
     nav .nav__item .js-highlight-hover {
       border-top: 2px solid rgba(0, 0, 0, 0.7);
       color: #b4b4b4;
@@ -71,7 +75,7 @@ nav {
       background: rgba(160, 20, 33, 0.75); }
   nav .nav__cart {
     position: relative;
-    top: .5rem;
+    top: 0.5rem;
     width: 5rem;
     text-align: center; }
   @media only screen and (min-width: 41rem) {
@@ -84,12 +88,13 @@ nav {
       font-size: 2.2rem; }
       nav .nav__main-section {
         flex: 0 1 650px; }
-      nav .nav__logo, nav .nav__logo img {
+      nav .nav__logo,
+      nav .nav__logo img {
         position: relative;
-        bottom: .4rem;
+        bottom: 0.4rem;
         width: 9.7rem;
         height: 7.17rem;
-        margin-left: .3rem; }
+        margin-left: 0.3rem; }
       nav .nav__cart {
         font-size: 1.8rem;
         top: 0rem;
@@ -105,9 +110,10 @@ nav {
       font-size: 2.75rem; }
       nav .nav__main-section {
         flex: 0 1 65%; }
-      nav .nav__logo, nav .nav__logo img {
+      nav .nav__logo,
+      nav .nav__logo img {
         position: relative;
-        bottom: .5rem;
+        bottom: 0.5rem;
         margin: 0 0 1rem 1rem;
         width: 11.5rem;
         height: 8.5rem; }
@@ -118,7 +124,7 @@ nav {
         margin-right: 1rem; }
       nav .nav__cart div {
         display: inline-block;
-        margin-left: .5rem; }
+        margin-left: 0.5rem; }
       nav .nav__item {
         line-height: 5.2rem; } }
 
@@ -127,20 +133,28 @@ nav {
   background-size: 100%;
   height: 34rem;
   text-align: center;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */ }
   .splash-image .splash-image__text-container {
     position: relative;
     top: 2.2rem;
     text-align: center; }
   .splash-image .splash-image__text1 {
-    font-family: 'Hi Melody', cursive;
+    font-family: "Hi Melody", cursive;
     font-size: 3.7rem;
-    color: #B02124; }
+    color: #b02124; }
   .splash-image .splash-image__text2 {
     margin-top: -3.3rem;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: "East Sea Dokdo", cursive;
     font-size: 2.5rem;
-    color: #04C714; }
+    color: #04c714; }
   @media only screen and (min-width: 41rem) {
     .splash-image {
       background: url("../images/food/hero-2.jpg") no-repeat 15% 0;
@@ -190,7 +204,15 @@ nav {
   height: 34rem;
   overflow: hidden;
   z-index: 101;
-  margin-top: 0.9rem; }
+  margin-top: 0.9rem;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */ }
 
 .info-panel--small {
   height: 17rem; }
@@ -210,7 +232,7 @@ nav {
   display: inline-block;
   position: relative;
   margin: auto;
-  top: -.5rem;
+  top: -0.5rem;
   height: 4rem;
   width: 17rem;
   color: purple;
@@ -218,7 +240,7 @@ nav {
   background: #1890f2;
   border-radius: 12px;
   box-shadow: 0 2px #888888;
-  font-family: 'Jua', sans-serif; }
+  font-family: "Jua", sans-serif; }
   .button-link:hover {
     background: black; }
   .button-link:active {
@@ -235,7 +257,7 @@ nav {
   background: #f0f0f0; }
 
 .info-panel__text {
-  font-family: 'Jua', sans-serif; }
+  font-family: "Jua", sans-serif; }
 
 .info-panel__text--small {
   font-size: 1.8rem; }
@@ -254,7 +276,7 @@ nav {
   color: #1890f2; }
 
 .info-panel__text--light-green {
-  color: #04C714; }
+  color: #04c714; }
 
 .info-panel--fresh {
   background: url("../images/misc/showcase-fresh.jpg") no-repeat 0 100%;
@@ -282,9 +304,10 @@ nav {
   left: 0;
   display: inline-block;
   width: 70px;
-  font-size: 3rem;
+  font-size: 3.3rem;
   text-align: center;
-  color: #1890f2; }
+  color: #1890f2;
+  color: #fffafa; }
 
 .js-falling-snow {
   animation: snowing 7s infinite linear; }
@@ -347,7 +370,7 @@ nav {
   z-index: 2;
   transform: translate(-120%, 0);
   opacity: 1;
-  transition: transform .3s ease-out; }
+  transition: transform 0.3s ease-out; }
 
 .info-panel__logo {
   position: absolute;
@@ -422,12 +445,13 @@ nav {
     height: 21rem; }
   .info-panel__zpane {
     background-position: 0 40%; }
-  a .pane1, a .pane2 {
+  a .pane1,
+  a .pane2 {
     display: inline-block;
     height: 16rem;
     width: 49%;
     margin: auto;
-    margin-left: .5%;
+    margin-left: 0.5%;
     font-size: 3rem; }
   a .pane3 {
     font-size: 3rem; }
@@ -436,7 +460,9 @@ nav {
   .button-link {
     height: 5rem;
     line-height: 5rem;
-    width: 20rem; } }
+    width: 20rem; }
+  .weather-container__snow {
+    font-size: 4rem; } }
 
 @media only screen and (min-width: 65rem) {
   a .info-panel {
@@ -455,7 +481,7 @@ nav {
   transform: translate(0, 0); }
 
 .js-zpane-fadein {
-  opacity: .7; }
+  opacity: 0.7; }
 
 @media only screen and (min-width: 119rem) {
   .info-panel__long-text {
@@ -489,7 +515,7 @@ nav {
     background: black; }
   .diagonal-box .diagonal-box__top-image {
     width: 120%;
-    transition: transform .75s ease, opacity 1.5s ease; }
+    transition: transform 0.75s ease, opacity 1.5s ease; }
   .diagonal-box .diagonal-box__text {
     width: 90%;
     height: 51vw;
@@ -502,7 +528,7 @@ nav {
     font-size: 7.5vw;
     color: white;
     transform: translate(0, 55%) scale(0.05);
-    transition: transform .5s ease-out; }
+    transition: transform 0.5s ease-out; }
   .diagonal-box .diagonal-box__bottom-text {
     width: 50%;
     height: 50%;
@@ -513,7 +539,7 @@ nav {
     font-size: 7.5vw;
     color: white;
     transform: translate(-100%, 155%) rotate(40.8deg) scale(0.05);
-    transition: transform .5s ease-out; }
+    transition: transform 0.5s ease-out; }
   .diagonal-box .diagonal-box__bottom {
     overflow: hidden;
     position: absolute;
@@ -523,16 +549,16 @@ nav {
     left: 3.8%;
     background: black;
     transform: rotate(-40.8deg);
-    transition: transform .75s ease; }
+    transition: transform 0.75s ease; }
   .diagonal-box .diagonal-box__bottom-image {
     position: absolute;
     top: -30%;
     width: 110%;
     transform: rotate(40.6deg);
-    transition: transform .75s ease, opacity 1.5s ease; }
+    transition: transform 0.75s ease, opacity 1.5s ease; }
   .diagonal-box .js-top-image-transform {
     transform: translate(-19.5%, -13%) scale(0.75);
-    opacity: .75; }
+    opacity: 0.75; }
   .diagonal-box .js-diagonal-slide-down {
     transform: translate(23%, 23%) rotate(-40.8deg); }
   .diagonal-box .js-text-slide {
@@ -541,23 +567,26 @@ nav {
     transform: translate(0, 1%) scale(1) rotate(40.8deg); }
   .diagonal-box .js-bottom-image-transform {
     transform: translate(2.5%, 15%) scale(0.75) rotate(40.8deg);
-    opacity: .75; }
+    opacity: 0.75; }
   .diagonal-box .js-diagonal-slide-up {
     transform: translate(-22%, -24.5%) rotate(-40.8deg); }
   @media only screen and (min-width: 41rem) {
     .diagonal-box {
       flex: 1 1 48%;
       height: 41.136vw; }
-      .diagonal-box .diagonal-box__text, .diagonal-box .diagonal-box__bottom-text {
+      .diagonal-box .diagonal-box__text,
+      .diagonal-box .diagonal-box__bottom-text {
         font-size: 6vw; } }
   @media only screen and (min-width: 65rem) {
     .diagonal-box {
       flex: 1 1 24.25%;
       height: 20.1395vw; }
-      .diagonal-box .diagonal-box__text, .diagonal-box .diagonal-box__bottom-text {
+      .diagonal-box .diagonal-box__text,
+      .diagonal-box .diagonal-box__bottom-text {
         font-size: 3vw; } }
   @media only screen and (min-width: 119rem) {
-    .diagonal-box .diagonal-box__text, .diagonal-box .diagonal-box__bottom-text {
+    .diagonal-box .diagonal-box__text,
+    .diagonal-box .diagonal-box__bottom-text {
       font-size: 3vw; } }
 
 @media only screen and (min-width: 41rem) {

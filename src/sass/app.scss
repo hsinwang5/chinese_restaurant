@@ -2,14 +2,14 @@
 // font-family: 'Jua', sans-serif;
 // font-family: 'East Sea Dokdo', cursive;
 
-$tablet: 41rem; 
-$desktop: 65rem; 
-$highdef: 119rem;  
+$tablet: 41rem;
+$desktop: 65rem;
+$highdef: 119rem;
 $border-color: #fcfcf0;
 $mobile-padding: 4.2rem;
 $desktop-padding: 5.6rem;
 $jumbo-padding: 6.45rem;
-$small-border: .9rem;
+$small-border: 0.9rem;
 $large-border: 1.2rem;
 
 @mixin mobile-cutoff {
@@ -27,10 +27,18 @@ $large-border: 1.2rem;
     @content;
   }
 }
+@mixin user-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
 
 //CSS section====================================================================
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -43,7 +51,7 @@ html {
 body {
   background: white;
   overflow-x: hidden;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
 }
 
 a {
@@ -58,12 +66,12 @@ a {
 
 .page-border {
   @include mobile-cutoff() {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  border: $small-border solid $border-color;
-  z-index: 200;
-  pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    border: $small-border solid $border-color;
+    z-index: 200;
+    pointer-events: none;
   }
   @include desktop-cutoff() {
     border-width: $large-border;
@@ -80,19 +88,20 @@ nav {
   width: 100%;
   height: 4.2rem;
   z-index: 201;
-  background: #078C19;
-  font-family: 'Jua', sans-serif;
+  background: #078c19;
+  font-family: "Jua", sans-serif;
   font-size: 1.1rem;
   // overflow: hidden;
-  a{
+  a {
     color: black;
   }
-  .nav__logo, .nav__logo img {
+  .nav__logo,
+  .nav__logo img {
     position: relative;
-    bottom: .4rem;
+    bottom: 0.4rem;
     width: 6.5rem;
     height: 4.8rem;
-    margin-left: .1rem;
+    margin-left: 0.1rem;
   }
   .nav__main-section {
     display: flex;
@@ -106,18 +115,19 @@ nav {
     a {
       height: 0;
       display: block;
-      transition: height .15s linear;
+      transition: height 0.15s linear;
+      background: rgba(160, 20, 33, 0.75);
     }
     .js-highlight-hover {
-      border-top: 2px solid rgba(0,0,0,.7);
+      border-top: 2px solid rgba(0, 0, 0, 0.7);
       color: rgba(180, 180, 180, 1);
       height: 100%;
-      background: rgba(160, 20, 33, .75);
+      background: rgba(160, 20, 33, 0.75);
     }
   }
   .nav__cart {
     position: relative;
-    top: .5rem;
+    top: 0.5rem;
     width: 5rem;
     text-align: center;
   }
@@ -125,19 +135,20 @@ nav {
   @include mobile-cutoff() {
     top: 0;
     height: 4.7rem;
-    margin: $small-border - .1rem auto;
-    border: .9rem solid $border-color;
+    margin: $small-border - 0.1rem auto;
+    border: 0.9rem solid $border-color;
     border-width: 0 $small-border;
     font-size: 2.2rem;
     .nav__main-section {
       flex: 0 1 650px;
     }
-    .nav__logo, .nav__logo img {
+    .nav__logo,
+    .nav__logo img {
       position: relative;
-      bottom: .4rem;
+      bottom: 0.4rem;
       width: 9.7rem;
       height: 7.17rem;
-      margin-left: .3rem;
+      margin-left: 0.3rem;
     }
     .nav__cart {
       font-size: 1.8rem;
@@ -151,15 +162,16 @@ nav {
   @include desktop-cutoff() {
     height: 5.2rem;
     margin: $large-border auto;
-    border: .9rem solid $border-color;
+    border: 0.9rem solid $border-color;
     border-width: 0 $large-border;
     font-size: 2.75rem;
     .nav__main-section {
       flex: 0 1 65%;
     }
-    .nav__logo, .nav__logo img {
+    .nav__logo,
+    .nav__logo img {
       position: relative;
-      bottom: .5rem;
+      bottom: 0.5rem;
       margin: 0 0 1rem 1rem;
       width: 11.5rem;
       height: 8.5rem;
@@ -172,7 +184,7 @@ nav {
     }
     .nav__cart div {
       display: inline-block;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
     .nav__item {
       line-height: 5.2rem;
@@ -187,21 +199,22 @@ nav {
   height: 34rem;
   text-align: center;
   overflow: hidden;
+  @include user-select();
   .splash-image__text-container {
     position: relative;
     top: 2.2rem;
     text-align: center;
   }
   .splash-image__text1 {
-    font-family: 'Hi Melody', cursive;
+    font-family: "Hi Melody", cursive;
     font-size: 3.7rem;
-    color: #B02124;
+    color: #b02124;
   }
   .splash-image__text2 {
     margin-top: -3.3rem;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: "East Sea Dokdo", cursive;
     font-size: 2.5rem;
-    color: #04C714;
+    color: #04c714;
   }
   //breakpoints
   @include mobile-cutoff() {
@@ -266,6 +279,7 @@ nav {
   overflow: hidden;
   z-index: 101;
   margin-top: $small-border;
+  @include user-select();
 }
 .info-panel--small {
   height: 17rem;
@@ -285,7 +299,7 @@ nav {
   display: inline-block;
   position: relative;
   margin: auto;
-  top: -.5rem;
+  top: -0.5rem;
   height: 4rem;
   width: 17rem;
   color: purple;
@@ -293,13 +307,13 @@ nav {
   background: #1890f2;
   border-radius: 12px;
   box-shadow: 0 2px #888888;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
   &:hover {
     background: black;
   }
   &:active {
     height: 3.93rem;
-    transform: translate(0, .07rem);
+    transform: translate(0, 0.07rem);
     background: #1890f2;
   }
 }
@@ -312,7 +326,7 @@ nav {
   background: rgba(240, 240, 240, 1);
 }
 .info-panel__text {
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
 }
 .info-panel__text--small {
   font-size: 1.8rem;
@@ -331,7 +345,7 @@ nav {
   color: #1890f2;
 }
 .info-panel__text--light-green {
-  color: #04C714;
+  color: #04c714;
 }
 
 //fresh panel
@@ -365,19 +379,30 @@ nav {
   left: 0;
   display: inline-block;
   width: 70px;
-  font-size: 3rem;
+  font-size: 3.3rem;
   text-align: center;
   color: #1890f2;
+  color: #fffafa;
 }
 .js-falling-snow {
   animation: snowing 7s infinite linear;
 }
 @keyframes snowing {
-  0% {transform: translate(0, 0);}
-  25% {transform: translate(-20%, 350%);}
-  50% {transform: translate(20%, 700%);}
-  75% {transform: translate(-20%, 1050%);}
-  100% {transform: translate(20%, 1400%);}
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-20%, 350%);
+  }
+  50% {
+    transform: translate(20%, 700%);
+  }
+  75% {
+    transform: translate(-20%, 1050%);
+  }
+  100% {
+    transform: translate(20%, 1400%);
+  }
 }
 
 //locally sourced panel
@@ -397,7 +422,8 @@ nav {
 
 //Custom Catering panel
 .info-panel--catering {
-  background: url("../images/misc/showcase-catering-mobile.jpg") no-repeat 50% 25%;
+  background: url("../images/misc/showcase-catering-mobile.jpg") no-repeat 50%
+    25%;
   background-size: 100% auto;
 }
 .info-panel--catering .info-panel__text-container {
@@ -435,7 +461,7 @@ nav {
   z-index: 2;
   transform: translate(-120%, 0);
   opacity: 1;
-  transition: transform .3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 .info-panel__logo {
   position: absolute;
@@ -443,7 +469,7 @@ nav {
   bottom: 8%;
   left: 3%;
   font-size: 2.5rem;
-  color: white; 
+  color: white;
   z-index: 2;
 }
 .info-panel__zpane {
@@ -522,7 +548,8 @@ nav {
     margin-top: 6rem;
   }
   .info-panel--catering {
-    background: url("../images/misc/showcase-catering-desktop.jpg") no-repeat 50% 25%;
+    background: url("../images/misc/showcase-catering-desktop.jpg") no-repeat
+      50% 25%;
     background-size: 100% auto;
   }
   a .info-panel {
@@ -531,12 +558,13 @@ nav {
   .info-panel__zpane {
     background-position: 0 40%;
   }
-  a .pane1, a .pane2 {
+  a .pane1,
+  a .pane2 {
     display: inline-block;
     height: 16rem;
     width: 49%;
     margin: auto;
-    margin-left: .5%;
+    margin-left: 0.5%;
     font-size: 3rem;
   }
   a .pane3 {
@@ -549,6 +577,9 @@ nav {
     height: 5rem;
     line-height: 5rem;
     width: 20rem;
+  }
+  .weather-container__snow {
+    font-size: 4rem;
   }
 }
 @include desktop-cutoff() {
@@ -571,7 +602,7 @@ nav {
   transform: translate(0, 0);
 }
 .js-zpane-fadein {
-  opacity: .7;
+  opacity: 0.7;
 }
 @include highdef-cutoff() {
   .info-panel__long-text {
@@ -603,18 +634,18 @@ $rotation-offset: 40.8deg;
 .diagonal-box {
   position: relative;
   flex: 0 0 60vw;
-  height: 60vw * .857;
+  height: 60vw * 0.857;
   overflow: hidden;
   margin-right: $small-border;
-  margin-top: $small-border - .1rem;
+  margin-top: $small-border - 0.1rem;
   .diagonal-box__top {
     width: 145%;
     height: 100%;
     background: black;
   }
-  .diagonal-box__top-image{
+  .diagonal-box__top-image {
     width: 120%;
-    transition: transform .75s ease, opacity 1.5s ease;
+    transition: transform 0.75s ease, opacity 1.5s ease;
   }
   .diagonal-box__text {
     width: 90%;
@@ -627,8 +658,8 @@ $rotation-offset: 40.8deg;
     text-align: center;
     font-size: 7.5vw;
     color: white;
-    transform: translate(0, 55%) scale(.05);
-    transition: transform .5s ease-out;
+    transform: translate(0, 55%) scale(0.05);
+    transition: transform 0.5s ease-out;
   }
   .diagonal-box__bottom-text {
     width: 50%;
@@ -639,8 +670,8 @@ $rotation-offset: 40.8deg;
     text-align: center;
     font-size: 7.5vw;
     color: white;
-    transform: translate(-100%, 155%) rotate($rotation-offset) scale(.05);
-    transition: transform .5s ease-out;
+    transform: translate(-100%, 155%) rotate($rotation-offset) scale(0.05);
+    transition: transform 0.5s ease-out;
   }
   .diagonal-box__bottom {
     overflow: hidden;
@@ -651,19 +682,19 @@ $rotation-offset: 40.8deg;
     left: 3.8%;
     background: black;
     transform: rotate(-$rotation-offset);
-    transition: transform .75s ease;
+    transition: transform 0.75s ease;
   }
   .diagonal-box__bottom-image {
     position: absolute;
     top: -30%;
     width: 110%;
     transform: rotate(40.6deg);
-    transition: transform .75s ease, opacity 1.5s ease;
+    transition: transform 0.75s ease, opacity 1.5s ease;
   }
   //animations section
   .js-top-image-transform {
-    transform: translate(-19.5%, -13%) scale(.75);
-    opacity: .75;
+    transform: translate(-19.5%, -13%) scale(0.75);
+    opacity: 0.75;
   }
   .js-diagonal-slide-down {
     transform: translate(23%, 23%) rotate(-$rotation-offset);
@@ -675,8 +706,8 @@ $rotation-offset: 40.8deg;
     transform: translate(0, 1%) scale(1) rotate($rotation-offset);
   }
   .js-bottom-image-transform {
-    transform: translate(2.5%, 15%) scale(.75) rotate($rotation-offset);
-    opacity: .75;
+    transform: translate(2.5%, 15%) scale(0.75) rotate($rotation-offset);
+    opacity: 0.75;
   }
   .js-diagonal-slide-up {
     transform: translate(-22%, -24.5%) rotate(-$rotation-offset);
@@ -684,20 +715,23 @@ $rotation-offset: 40.8deg;
   //breakpoints
   @include mobile-cutoff() {
     flex: 1 1 48%;
-    height: 48vw * .857;
-    .diagonal-box__text, .diagonal-box__bottom-text {
+    height: 48vw * 0.857;
+    .diagonal-box__text,
+    .diagonal-box__bottom-text {
       font-size: 6vw;
     }
   }
   @include desktop-cutoff() {
     flex: 1 1 24.25%;
-    height: 23.5vw * .857;
-    .diagonal-box__text, .diagonal-box__bottom-text {
-      font-size: 3vw;;
+    height: 23.5vw * 0.857;
+    .diagonal-box__text,
+    .diagonal-box__bottom-text {
+      font-size: 3vw;
     }
   }
   @include highdef-cutoff() {
-    .diagonal-box__text, .diagonal-box__bottom-text {
+    .diagonal-box__text,
+    .diagonal-box__bottom-text {
       font-size: 3vw;
     }
   }
@@ -719,7 +753,7 @@ $rotation-offset: 40.8deg;
     margin-right: 1% !important;
   }
   .diagonal-box:nth-child(4) {
-    margin-right: 0!important;
+    margin-right: 0 !important;
   }
 }
 
@@ -773,5 +807,3 @@ $rotation-offset: 40.8deg;
     margin-bottom: 0;
   }
 }
-
-
