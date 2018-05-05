@@ -37,7 +37,4 @@ ehthumbs.db
 Thumbs.db
 
 node_modules/
-public/images/
-*.jpg
-*.jpg
 public/stylesheets/app.css
